@@ -60,6 +60,7 @@
      <Compile Include="Assets\Code\Abilities\Views\AbilityNodeView.cs" />
      <Compile Include="Assets\Code\Abilities\Implementation\AbilityService.cs" />
      <Compile Include="Assets\Code\Abilities\Installer\AbilityInstaller.cs" />
+     <Compile Include="Assets\Code\Abilities\AbilityExtensions.cs" />
      <Folder Include="Assets\Code\Finance\Implementation" />
      <Folder Include="Assets\Code\Ui\Screens" />
      <None Include="Assets\Code\Code.Core.asmdef" />
