@@ -19,5 +19,5 @@ MonoBehaviour:
   _mainNodeColor: {r: 0.23201919, g: 1, b: 0, a: 1}
   _openColor: {r: 0.23137257, g: 1, b: 0, a: 1}
   _closedColor: {r: 0.23137257, g: 1, b: 0, a: 1}
-  _relationshipIndexes: 
+  _relationshipIndexes: 010000000800000004000000
   _position: {x: 129, y: 175}

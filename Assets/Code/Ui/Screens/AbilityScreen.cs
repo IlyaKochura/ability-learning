@@ -58,6 +58,7 @@ namespace Code.Ui.Screens
             _abilityService = abilityService;
 
             _view.CloseClick += screenManager.GoBack;
+            
             _view.OpenButton.onClick.AddListener(OpenAbility);
             _view.OpenButton.onClick.AddListener(CloseAbility);
         }

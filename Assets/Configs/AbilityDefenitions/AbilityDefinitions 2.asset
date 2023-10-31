@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 2
   m_EditorClassIdentifier: 
   _index: 2
-  _price: 5
+  _price: 2
   _title: Flying skill
   _description: Fly wherever your eyes look...
   _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
   _openColor: {r: 1, g: 0.5330188, b: 0.5330188, a: 1}
   _closedColor: {r: 0.3207547, g: 0.21333215, b: 0.21333215, a: 1}
-  _relationshipIndexes: 
+  _relationshipIndexes: 01000000
   _position: {x: 627, y: 296}

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 7
   m_EditorClassIdentifier: 
   _index: 7
-  _price: 40
+  _price: 7
   _title: 
   _description: 
   _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
   _openColor: {r: 1, g: 0.495283, b: 0.495283, a: 1}
   _closedColor: {r: 0.3207547, g: 0.17096831, b: 0.17096831, a: 1}
-  _relationshipIndexes: 
+  _relationshipIndexes: 0500000006000000
   _position: {x: -714, y: 164}

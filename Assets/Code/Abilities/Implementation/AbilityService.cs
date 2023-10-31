@@ -10,7 +10,7 @@ namespace Code.Abilities.Implementation
         private readonly MainConfig _mainConfig;
         private readonly IPointsModel _pointsModel;
         private readonly AbilityModel _baseAbility;
-        
+
         public AbilityModel[] AbilityModels { get; set; }
 
         public AbilityService(MainConfig mainConfig, IPointsModel pointsModel)
@@ -19,6 +19,10 @@ namespace Code.Abilities.Implementation
             _pointsModel = pointsModel;
 
             AbilityModels = GetModels();
+
+            _baseAbility = AbilityModels.First(x => x.Index == mainConfig.BaseAbilityIndex);
+            
+            _baseAbility.Open();
         }
 
         public bool CanClose(int index, AbilityModel[] abilityModels)
@@ -57,7 +61,7 @@ namespace Code.Abilities.Implementation
         
         public bool CanOpen(AbilityModel abilityModel)
         {
-            var abilities = abilityModel.GetOpenedAbilitiesRelationship(GetModels());
+            var abilities = abilityModel.GetOpenedAbilitiesRelationship(AbilityModels);
 
             if (abilities == null)
             {
@@ -78,7 +82,6 @@ namespace Code.Abilities.Implementation
             }
 
             return canOpen && _pointsModel.TrySpentPoints(abilityModel.Price);
-
         }
     }
 }

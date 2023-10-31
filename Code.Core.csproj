@@ -45,6 +45,7 @@
      <Compile Include="Assets\Code\Ui\InstallerUI\InstallerUi.cs" />
      <Compile Include="Assets\Code\Configs\MainConfig.cs" />
      <Compile Include="Assets\Code\Abilities\Contracts\IAbilityService.cs" />
+     <Compile Include="Assets\Code\Abilities\Installer\AbilityInstaller.cs" />
      <Compile Include="Assets\Code\Abilities\Implementation\AbilityViewFactory.cs" />
      <Compile Include="Assets\Code\Finance\Implementation\PointsModel.cs" />
      <Compile Include="Assets\Code\Ui\Screens\MainScreen.cs" />
@@ -54,13 +55,12 @@
      <Compile Include="Assets\Code\Ui\Views\MainView.cs" />
      <Compile Include="Assets\Code\Abilities\Models\AbilityModel.cs" />
      <Compile Include="Assets\Code\Finance\Installer\FinanceInstaller.cs" />
+     <Compile Include="Assets\Code\Abilities\AbilityExtensions.cs" />
      <Compile Include="Assets\Code\Finance\Models\FinanceStorage.cs" />
      <Compile Include="Assets\Code\Finance\Contracts\IPointsModel.cs" />
      <Compile Include="Assets\Code\Abilities\Contracts\IAbilityViewFactory.cs" />
      <Compile Include="Assets\Code\Abilities\Views\AbilityNodeView.cs" />
      <Compile Include="Assets\Code\Abilities\Implementation\AbilityService.cs" />
-     <Compile Include="Assets\Code\Abilities\Installer\AbilityInstaller.cs" />
-     <Compile Include="Assets\Code\Abilities\AbilityExtensions.cs" />
      <Folder Include="Assets\Code\Finance\Implementation" />
      <Folder Include="Assets\Code\Ui\Screens" />
      <None Include="Assets\Code\Code.Core.asmdef" />
