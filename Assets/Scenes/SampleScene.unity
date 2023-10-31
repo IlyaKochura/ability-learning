@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 104433705}
   - component: {fileID: 104433707}
   - component: {fileID: 104433708}
+  - component: {fileID: 104433709}
   m_Layer: 0
   m_Name: SceneInstaller
   m_TagString: Untagged
@@ -226,6 +227,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00359c6ea6cd9854c9707aaa2d4d518f, type: 2}
   _monoInstallers:
   - {fileID: 104433708}
+  - {fileID: 104433709}
   - {fileID: 104433707}
   _installerPrefabs: []
   _autoRun: 1
@@ -283,6 +285,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09655b4abb0c474697ad3cc1b8410989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &104433709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104433704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a94af5f3c740a2bf130901e0cd9229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &151309620
@@ -482,17 +496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1083316543 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5363523854819478918, guid: 12633135f86b33a4d93a56f45c7d2add, type: 3}
-  m_PrefabInstance: {fileID: 5363523853736432825}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1460106954 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5363523854457905779, guid: 12633135f86b33a4d93a56f45c7d2add, type: 3}
@@ -634,6 +637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AbilityView
       objectReference: {fileID: 0}
+    - target: {fileID: 5363523854457905776, guid: 12633135f86b33a4d93a56f45c7d2add, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5363523854457905779, guid: 12633135f86b33a4d93a56f45c7d2add, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -718,10 +725,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8157548780109979890, guid: 12633135f86b33a4d93a56f45c7d2add, type: 3}
-      propertyPath: _closeButton
-      value: 
-      objectReference: {fileID: 1083316543}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12633135f86b33a4d93a56f45c7d2add, type: 3}
 --- !u!114 &5363523853736432826 stripped

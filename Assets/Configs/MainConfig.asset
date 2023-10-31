@@ -12,4 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f9a62279b1437eafd9e6ac3ac8857d, type: 3}
   m_Name: MainConfig
   m_EditorClassIdentifier: 
+  _abilityNodeViewPrefab: {fileID: 277735112136860497, guid: 671f4e892a77afa4fbab4398573e1c1a, type: 3}
   _financeStorage: {fileID: 11400000, guid: f538c74b4f33e214bb82adf219aaa3a6, type: 2}
+  _abilityDefinitions:
+  - {fileID: 11400000, guid: 0bfd1d008e8c73744b9b66a69f8dda93, type: 2}
+  - {fileID: 11400000, guid: 5892f9633fc96fb45a2f7f605cdcdc11, type: 2}
+  - {fileID: 11400000, guid: ec2fff362ae422a4187cd7076c25cfec, type: 2}
+  - {fileID: 11400000, guid: 4e8a5768739c7c242879213f98a09a29, type: 2}
+  - {fileID: 11400000, guid: a25b8a7371e3dde4bab6e60b11a37eda, type: 2}
+  - {fileID: 11400000, guid: e72178fed885a8c4da340714cfe4ab90, type: 2}
+  - {fileID: 11400000, guid: a258e7078a16289458ad48c4f74544c6, type: 2}
+  - {fileID: 11400000, guid: 2e75c9eebe90fba4da4af340e37b1adb, type: 2}
+  - {fileID: 11400000, guid: 53867645146c2894bb2cdff12b7fa8c0, type: 2}
+  - {fileID: 11400000, guid: 855066fb3d5c61f419f3edb9484886ea, type: 2}
+  - {fileID: 11400000, guid: e137f9f50817c594e803fa44183bad60, type: 2}
+  - {fileID: 11400000, guid: 6a1e05df892119f4aae6d018ee7d8fc8, type: 2}

@@ -6,7 +6,5 @@ namespace Code.Abilities.Contracts
     public interface IAbilityViewFactory
     {
         AbilityNodeView CreateAbilityNodeView(AbilityModel abilityModel);
-
-        AbilityModel ToModel(AbilityDefinition abilityDefinition);
     }
 }
