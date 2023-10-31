@@ -4,7 +4,7 @@ using Code.Finance.Models;
 
 namespace Code.Finance.Implementation
 {
-    public class PointsModel : IPointModel
+    public class PointsModel : IPointsModel
     {
         private readonly FinanceStorage _financeStorage;
         
@@ -14,8 +14,8 @@ namespace Code.Finance.Implementation
         {
             _financeStorage = mainConfig.FinanceStorage;
         }
-
-        public event IPointModel.OnPointsChanged OnPointsChanger;
+        
+        public event IPointsModel.OnPointsChanged OnPointsChanger;
 
         public void Add(int count)
         {

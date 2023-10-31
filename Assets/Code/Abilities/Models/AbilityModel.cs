@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Code.Abilities.Models
@@ -13,7 +14,14 @@ namespace Code.Abilities.Models
         public Color ClosedColor { get; set; }
         public int[] RelationshipIndexes { get; set; }
         public bool IsOpen { get; private set; }
+        public Vector2 Position { get; set; }
 
+        [JsonConstructor]
+        public AbilityModel()
+        {
+            
+        }
+        
         public AbilityModel(bool open = false)
         {
             IsOpen = open;

@@ -16,7 +16,8 @@ MonoBehaviour:
   _price: 0
   _title: 
   _description: 
-  _mainNodeColor: {r: 0, g: 0, b: 0, a: 0}
-  _openColor: {r: 0, g: 0, b: 0, a: 0}
-  _closedColor: {r: 0, g: 0, b: 0, a: 0}
+  _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
+  _openColor: {r: 1, g: 0.5707547, b: 0.5707547, a: 1}
+  _closedColor: {r: 0.254717, g: 0.13096298, b: 0.13096298, a: 1}
   _relationshipIndexes: 
+  _position: {x: -153, y: 150}

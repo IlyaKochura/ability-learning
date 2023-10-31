@@ -2,31 +2,46 @@ using System.Linq;
 using Code.Abilities.Contracts;
 using Code.Abilities.Models;
 using Code.Configs;
-using UnityEngine;
-
+using Code.Finance.Contracts;
 namespace Code.Abilities.Implementation
 {
     public class AbilityService : IAbilityService
     {
-        public AbilityModel BaseAbility { get; }
-        public AbilityModel[] Abilities { get; }
-        
-        public AbilityService(MainConfig mainConfig)
+        private readonly MainConfig _mainConfig;
+        private readonly IPointsModel _pointsModel;
+        private readonly AbilityModel _baseAbility;
+
+        public AbilityService(MainConfig mainConfig, IPointsModel pointsModel)
         {
-            var abilityDefinitions = mainConfig.AbilityDefinitions;
+            _mainConfig = mainConfig;
+            _pointsModel = pointsModel;
+        }
 
-            Abilities = abilityDefinitions.Select(definition => definition.GetModel()).ToArray();
-            BaseAbility = Abilities.FirstOrDefault(model => model.Index == mainConfig.BaseAbilityIndex);
-            
-            if (BaseAbility == default)
-            {
-                Debug.LogError($"sdadsadadadasd");
+        public bool CanClose(int index, AbilityModel[] abilityModels)
+        {
+            throw new System.NotImplementedException();
+        }
 
-                return;
-            }
-            
-            BaseAbility.Open();
+        public AbilityModel[] GetModels()
+        {
+            var abilityDefinitions = _mainConfig.AbilityDefinitions;
+
+            return abilityDefinitions.Select(definition => definition.GetModel()).ToArray();
         }
         
+        public bool CanOpen(int index, AbilityModel[] abilityModels)
+        {
+            var ability = abilityModels.FirstOrDefault(abilityModel => abilityModel.Index == index);
+
+            if (ability == default)
+            {
+                return false;
+            }
+
+            return _pointsModel.TrySpentPoints(ability.Price);
+        }
+        
+        
+
     }
 }

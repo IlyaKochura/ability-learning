@@ -16,7 +16,8 @@ MonoBehaviour:
   _price: 0
   _title: BaseNode
   _description: It's base node, and can make nothing
-  _mainNodeColor: {r: 0.23201919, g: 1, b: 0, a: 0}
-  _openColor: {r: 0.24180019, g: 1, b: 0, a: 0}
-  _closedColor: {r: 0.3223859, g: 1, b: 0, a: 0}
+  _mainNodeColor: {r: 0.23201919, g: 1, b: 0, a: 1}
+  _openColor: {r: 0.23137257, g: 1, b: 0, a: 1}
+  _closedColor: {r: 0.23137257, g: 1, b: 0, a: 1}
   _relationshipIndexes: 
+  _position: {x: 129, y: 175}

@@ -10,21 +10,20 @@ namespace Code.Abilities.Views
     {
         [SerializeField] private Image _mainImage;
         [SerializeField] private Image _sideImage;
+        [SerializeField] private GameObject _currentImage;
         [SerializeField] private TMP_Text _titleText;
         [SerializeField] private TMP_Text _descriptionText;
         [SerializeField] private TMP_Text _priceText;
         [SerializeField] private Button _button;
-
-        public Action CLickOnNode { get; set; }
         
-        public void Start()
+        public void SetAction(Action<int> action, int nodeIndex)
         {
-            _button.onClick.AddListener(() => CLickOnNode?.Invoke());
+            _button.onClick.AddListener(() => action?.Invoke(nodeIndex));
         }
 
-        public void SetAction(Action action)
+        public void SetCurrent(bool current)
         {
-            _button.onClick.AddListener(() => action?.Invoke());
+            _currentImage.SetActive(current);
         }
         
         public void UpdateView(AbilityModel model)

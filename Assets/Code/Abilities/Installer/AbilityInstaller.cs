@@ -8,6 +8,7 @@ namespace Code.Abilities.Installer
         public override void InstallBindings()
         {
             Container.BindInterfacesTo<AbilityViewFactory>().AsSingle();
+            Container.BindInterfacesTo<AbilityService>().AsSingle().NonLazy();
         }
     }
 }

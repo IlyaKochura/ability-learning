@@ -13,7 +13,7 @@ namespace Code.Finance.Installer
 
         public override void Start()
         {
-            var model = Container.Resolve<IPointModel>();
+            var model = Container.Resolve<IPointsModel>();
             model.Load();
         }
     }

@@ -55,7 +55,7 @@
      <Compile Include="Assets\Code\Abilities\Models\AbilityModel.cs" />
      <Compile Include="Assets\Code\Finance\Installer\FinanceInstaller.cs" />
      <Compile Include="Assets\Code\Finance\Models\FinanceStorage.cs" />
-     <Compile Include="Assets\Code\Finance\Contracts\IPointModel.cs" />
+     <Compile Include="Assets\Code\Finance\Contracts\IPointsModel.cs" />
      <Compile Include="Assets\Code\Abilities\Contracts\IAbilityViewFactory.cs" />
      <Compile Include="Assets\Code\Abilities\Views\AbilityNodeView.cs" />
      <Compile Include="Assets\Code\Abilities\Implementation\AbilityService.cs" />

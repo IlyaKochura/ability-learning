@@ -15,6 +15,7 @@ namespace Code.Abilities
         [SerializeField] private Color _openColor;
         [SerializeField] private Color _closedColor;
         [SerializeField] private int[] _relationshipIndexes;
+        [SerializeField] private Vector2 _position;
 
         public AbilityModel GetModel()
         {
@@ -27,7 +28,8 @@ namespace Code.Abilities
                 MainNodeColor = _mainNodeColor,
                 OpenColor = _openColor,
                 ClosedColor = _closedColor,
-                RelationshipIndexes = _relationshipIndexes
+                RelationshipIndexes = _relationshipIndexes,
+                Position = _position
             };
 
             return model;

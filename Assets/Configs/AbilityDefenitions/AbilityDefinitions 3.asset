@@ -16,7 +16,8 @@ MonoBehaviour:
   _price: 10
   _title: Get out of the house
   _description: It's a super power, no other way
-  _mainNodeColor: {r: 0, g: 0, b: 0, a: 0}
-  _openColor: {r: 0, g: 0, b: 0, a: 0}
-  _closedColor: {r: 0, g: 0, b: 0, a: 0}
+  _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
+  _openColor: {r: 1, g: 0.514151, b: 0.514151, a: 1}
+  _closedColor: {r: 0.1792453, g: 0.090468146, b: 0.090468146, a: 1}
   _relationshipIndexes: 
+  _position: {x: 617, y: 69}

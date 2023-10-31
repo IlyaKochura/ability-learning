@@ -45,14 +45,17 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: a725c672e15434c43a113f3a10bc4d90, type: 3}
+    - {fileID: 2800000, guid: 99a10c57bd5c7c7499b15d142960ab8f, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: a725c672e15434c43a113f3a10bc4d90, type: 3}
+  - {fileID: 21300000, guid: 99a10c57bd5c7c7499b15d142960ab8f, type: 3}
   m_PackedSpriteNamesToIndex:
   - CloseButton
+  - CurrentArrow
   m_RenderDataMap: {}
   m_Tag: Common
   m_IsVariant: 0
