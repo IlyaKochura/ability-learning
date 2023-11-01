@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _index: 5
   _price: 5
-  _title: 
-  _description: 
+  _title: Not burnable
+  _description: You've learned IT
   _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
   _openColor: {r: 0.9811321, g: 0.5507298, b: 0.5507298, a: 1}
   _closedColor: {r: 0.16037738, g: 0.08699717, b: 0.08699717, a: 1}

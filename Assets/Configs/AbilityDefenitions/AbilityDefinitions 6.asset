@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _index: 6
   _price: 6
-  _title: 
-  _description: 
+  _title: Interviewing skill
+  _description: And even my knees don't shake
   _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
   _openColor: {r: 1, g: 0.5518868, b: 0.5518868, a: 1}
   _closedColor: {r: 0.18867922, g: 0.09344961, b: 0.09344961, a: 1}

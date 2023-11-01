@@ -24,16 +24,20 @@ namespace Code.Finance.Implementation
             Save();
         }
 
-        public bool TrySpentPoints(int count)
+        public bool EnoughPoints(int count)
+        {
+            return _points - count >= 0;
+        }
+
+        public void SpentPoints(int count)
         {
             if (_points - count < 0)
             {
-                return false;
+                return;
             }
             
             _points -= count;
             OnPointsChanger?.Invoke(_points);
-            return true;
         }
 
         public void Load()

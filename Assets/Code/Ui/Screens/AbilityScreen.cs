@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Code.Abilities.Contracts;
-using Code.Abilities.Models;
 using Code.Abilities.Views;
 using Code.Configs;
 using Code.Ui.Views;
@@ -13,42 +11,14 @@ namespace Code.Ui.Screens
 {
     public class AbilityScreen : IUIScreen
     {
-        // private class ModelViewPair
-        // {
-        //     public AbilityNodeView View { get; }
-        //     public AbilityModel Model { get; }
-        //
-        //     public ModelViewPair(AbilityNodeView abilityNodeView, AbilityModel abilityModel)
-        //     {
-        //         View = abilityNodeView;
-        //         Model = abilityModel;
-        //     }
-        //     
-        //     public void UpdateView()
-        //     {
-        //         View.UpdateView(Model);
-        //     }
-        //
-        //     public void SetActionClickOnNode(Action<int> action)
-        //     {
-        //         View.SetAction(action, Model.Index);
-        //     }
-        //
-        //     public void SetCurrentNode(bool current)
-        //     {
-        //         View.SetCurrent(current);
-        //     }
-        // }
-
         private readonly AbilityView _view;
         private readonly IAbilityViewFactory _abilityViewFactory;
         private readonly IAbilityService _abilityService;
         private readonly MainConfig _mainConfig;
 
         private Dictionary<int, AbilityNodeView> _dictionaryModelViewPairs = new();
-        
-        private AbilityNodeView _currentViewNode;
-        private AbilityModel _currentModelNode;
+
+        private AbilityNodeView _currentAbilityView;
 
         public AbilityScreen(AbilityView view, IScreenManager screenManager, IAbilityViewFactory abilityViewFactory,
             IAbilityService abilityService)
@@ -58,14 +28,18 @@ namespace Code.Ui.Screens
             _abilityService = abilityService;
 
             _view.CloseClick += screenManager.GoBack;
-            
+
             _view.OpenButton.onClick.AddListener(OpenAbility);
-            _view.OpenButton.onClick.AddListener(CloseAbility);
+            _view.CloseButton.onClick.AddListener(CloseAbility);
         }
 
         public void Show()
         {
             FillAbilities();
+            
+            _currentAbilityView = GetAbilityNodeView(_abilityService.CurrentAbilityModel.Index);
+            
+            SetCurrentNode(_abilityService.CurrentAbilityModel.Index);
 
             _view.Show();
         }
@@ -84,56 +58,51 @@ namespace Code.Ui.Screens
 
         private void SetCurrentNode(int index)
         {
-            var currentNode = _dictionaryModelViewPairs.FirstOrDefault(modelViewPair => modelViewPair.Key == index)
-                .Value;
+            _abilityService.SetCurrentAbilityModel(index);
 
-            if (_currentViewNode != null)
-            {
-                _currentViewNode.SetCurrent(false);
-            }
+            _currentAbilityView.SetCurrent(false);
 
-            _currentViewNode = currentNode;
-            _currentViewNode.SetCurrent(true);
+            _currentAbilityView = GetAbilityNodeView(index);
 
-            var currentModel = _abilityService.AbilityModels.FirstOrDefault(model => model.Index == index);
+            _currentAbilityView.SetCurrent(true);
+            
+            UpdateInteractableButtons();
+        }
 
-            if (currentNode == null)
-            {
-                return;
-            }
+        private AbilityNodeView GetAbilityNodeView(int index)
+        {
+            var abilityNodeView = _dictionaryModelViewPairs.FirstOrDefault(nodeView => nodeView.Key == index).Value;
 
-            _currentModelNode = currentModel;
+            return abilityNodeView;
+        }
+
+        private void UpdateInteractableButtons()
+        {
+            _view.CloseButton.interactable = _abilityService.CanCloseCurrentAbility();
+            _view.OpenButton.interactable = _abilityService.CanOpenCurrentAbility();
         }
 
         private void OpenAbility()
         {
-            if (CalculateOpen())
+            if (_abilityService.CanOpenCurrentAbility())
             {
-                _currentModelNode.Open();
-                _currentViewNode.UpdateView(_currentModelNode);
+                _abilityService.OpenCurrentAbility();
+                _currentAbilityView.UpdateView(_abilityService.CurrentAbilityModel);
+                
+                UpdateInteractableButtons();
             }
         }
         
         private void CloseAbility()
         {
-            
+            if (_abilityService.CanCloseCurrentAbility())
+            {
+                _abilityService.CloseCurrentAbility();
+                _currentAbilityView.UpdateView(_abilityService.CurrentAbilityModel);
+                
+                UpdateInteractableButtons();
+            }
         }
-
-        private bool CalculateOpen()
-        {
-            return _abilityService.CanOpen(_currentModelNode);
-        }
-
-        // private void CalculateClose()
-        // {
-        //     var models = _dictionaryModelViewPairs.Values.Select(modelViewPair => modelViewPair.Model).ToArray();
-        //
-        //     if (_abilityService.CanClose(_currentViewNode.Model.Index, models))
-        //     {
-        //         _currentViewNode.Model.Close();
-        //         _currentViewNode.UpdateView();
-        //     }
-        // }
 
         public void Hide()
         {

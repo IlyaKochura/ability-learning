@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _index: 4
   _price: 4
-  _title: 
-  _description: 
+  _title: Touch the grass
+  _description: Did you make it to the end of the sprint?
   _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
   _openColor: {r: 1, g: 0.5707547, b: 0.5707547, a: 1}
   _closedColor: {r: 0.254717, g: 0.13096298, b: 0.13096298, a: 1}

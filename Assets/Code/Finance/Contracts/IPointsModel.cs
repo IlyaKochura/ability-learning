@@ -8,7 +8,8 @@ namespace Code.Finance.Contracts
         
         public event OnPointsChanged OnPointsChanger;
         public void Add(int count);
-        public bool TrySpentPoints(int count);
+        public bool EnoughPoints(int count);
+        public void SpentPoints(int count);
         public void Load();
     }
 }

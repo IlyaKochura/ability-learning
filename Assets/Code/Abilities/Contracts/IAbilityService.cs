@@ -5,10 +5,12 @@ namespace Code.Abilities.Contracts
     public interface IAbilityService
     {
         public AbilityModel[] AbilityModels { get; }
-        public bool CanOpen(AbilityModel abilityModel);
-        public bool CanClose(int index, AbilityModel[] abilityModels);
-        public void OpenAbility(int index);
-        public void CloseAbility(int index);
+        public AbilityModel CurrentAbilityModel { get; }
+        public void SetCurrentAbilityModel(int index);
+        public bool CanOpenCurrentAbility();
+        public bool CanCloseCurrentAbility();
+        public void OpenCurrentAbility();
+        public void CloseCurrentAbility();
         public AbilityModel[] GetModels();
     }
 }
