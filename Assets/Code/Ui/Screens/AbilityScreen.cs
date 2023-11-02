@@ -3,9 +3,9 @@ using System.Linq;
 using Code.Abilities.Contracts;
 using Code.Abilities.Views;
 using Code.Configs;
+using Code.Finance.Contracts;
 using Code.Ui.Views;
 using ScreenManager.Runtime.Contracts;
-using Object = UnityEngine.Object;
 
 namespace Code.Ui.Screens
 {
@@ -14,6 +14,7 @@ namespace Code.Ui.Screens
         private readonly AbilityView _view;
         private readonly IAbilityViewFactory _abilityViewFactory;
         private readonly IAbilityService _abilityService;
+        private readonly IPointsModel _pointsModel;
         private readonly MainConfig _mainConfig;
 
         private Dictionary<int, AbilityNodeView> _dictionaryModelViewPairs = new();
@@ -21,12 +22,15 @@ namespace Code.Ui.Screens
         private AbilityNodeView _currentAbilityView;
 
         public AbilityScreen(AbilityView view, IScreenManager screenManager, IAbilityViewFactory abilityViewFactory,
-            IAbilityService abilityService)
+            IAbilityService abilityService, IPointsModel pointsModel)
         {
             _view = view;
             _abilityViewFactory = abilityViewFactory;
             _abilityService = abilityService;
+            _pointsModel = pointsModel;
 
+            pointsModel.OnPointsChanger += _ => UpdateInteractableButtons();
+            
             _view.CloseClick += screenManager.GoBack;
 
             _view.OpenButton.onClick.AddListener(OpenAbility);
@@ -108,7 +112,7 @@ namespace Code.Ui.Screens
         {
             foreach (var modelView in _dictionaryModelViewPairs.Values)
             {
-                Object.Destroy(modelView.gameObject);
+                modelView.Recycle();
             }
 
             _dictionaryModelViewPairs.Clear();

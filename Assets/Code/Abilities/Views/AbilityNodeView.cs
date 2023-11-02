@@ -1,12 +1,13 @@
 using System;
 using Code.Abilities.Models;
+using ObjectPool.Runtime.Contracts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Code.Abilities.Views
 {
-    public class AbilityNodeView : MonoBehaviour
+    public class AbilityNodeView : MonoBehaviour, IRecycle
     {
         [SerializeField] private Image _mainImage;
         [SerializeField] private Image _sideImage;
@@ -33,6 +34,11 @@ namespace Code.Abilities.Views
             _titleText.SetText(model.Title);
             _descriptionText.SetText(model.Description);
             _priceText.SetText($"{model.Price}");
+        }
+
+        public void Recycle()
+        {
+            gameObject.SetActive(false);
         }
     }
 }

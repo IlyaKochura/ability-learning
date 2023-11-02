@@ -15,7 +15,6 @@ namespace Code.Ui.InstallerUI
         {
             InstallViews();
             InstallScreens();
-            ResolveScreenManager();
         }
 
         private void InstallScreens()
@@ -30,10 +29,13 @@ namespace Code.Ui.InstallerUI
             Container.Bind<AbilityView>().FromInstance(_abilityView).AsSingle();
         }
 
+        public override void Start()
+        {
+            ResolveScreenManager();
+        }
+
         private void ResolveScreenManager()
         {
-            Container.BindInterfacesTo<ScreenManager.Runtime.Implementation.ScreenManager>().AsSingle();
-            
             var screenManager = Container.Resolve<IScreenManager>();
             screenManager.Resolve(Container);
             

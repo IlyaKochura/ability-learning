@@ -16,8 +16,8 @@ MonoBehaviour:
   _price: 4
   _title: Touch the grass
   _description: Did you make it to the end of the sprint?
-  _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
-  _openColor: {r: 1, g: 0.5707547, b: 0.5707547, a: 1}
-  _closedColor: {r: 0.254717, g: 0.13096298, b: 0.13096298, a: 1}
-  _relationshipIndexes: 000000000500000006000000
-  _position: {x: -153, y: 150}
+  _mainNodeColor: {r: 0.9921569, g: 0.7725491, b: 0.098039225, a: 1}
+  _openColor: {r: 0.6, g: 1, b: 0.31764707, a: 1}
+  _closedColor: {r: 0.16078432, g: 0.09411766, b: 0.09411766, a: 1}
+  _relationshipIndexes: 0200000003000000
+  _position: {x: 724, y: 54}

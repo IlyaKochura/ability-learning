@@ -41,14 +41,16 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\Gamelib.ScreenManager\Runtime\Implementation\ScreenManager.cs" />
-     <Compile Include="Assets\Plugins\Gamelib.ScreenManager\Runtime\Contracts\IScreenManager.cs" />
-     <Compile Include="Assets\Plugins\Gamelib.ScreenManager\Runtime\Contracts\BaseView.cs" />
-     <Compile Include="Assets\Plugins\Gamelib.ScreenManager\Runtime\Contracts\IUIScreen.cs" />
-     <Folder Include="Assets\Plugins\Gamelib.ScreenManager\Runtime\Contracts" />
-     <Folder Include="Assets\Plugins\Gamelib.ScreenManager\Runtime" />
-     <Folder Include="Assets\Plugins\Gamelib.ScreenManager\Runtime\Implementation" />
-     <None Include="Assets\Plugins\Gamelib.ScreenManager\Runtime\Gamelib.ScreenManager.Runtime.asmdef" />
+     <Compile Include="Assets\Plugins\com.gamelib.screenmanager\Runtime\Implementation\ScreenManager.cs" />
+     <Compile Include="Assets\Plugins\com.gamelib.screenmanager\Runtime\Contracts\IScreenManager.cs" />
+     <Compile Include="Assets\Plugins\com.gamelib.screenmanager\Runtime\Contracts\BaseView.cs" />
+     <Compile Include="Assets\Plugins\com.gamelib.screenmanager\Runtime\Contracts\IUIScreen.cs" />
+     <Compile Include="Assets\Plugins\com.gamelib.screenmanager\Runtime\Installer\ScreenManagerInstaller.cs" />
+     <Folder Include="Assets\Plugins\com.gamelib.screenmanager\Runtime\Contracts" />
+     <Folder Include="Assets\Plugins\com.gamelib.screenmanager\Runtime" />
+     <Folder Include="Assets\Plugins\com.gamelib.screenmanager\Runtime\Implementation" />
+     <Folder Include="Assets\Plugins\com.gamelib.screenmanager\Runtime\Installer" />
+     <None Include="Assets\Plugins\com.gamelib.screenmanager\Runtime\Gamelib.ScreenManager.Runtime.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>D:\UnityEngine\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

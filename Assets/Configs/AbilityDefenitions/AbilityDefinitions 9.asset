@@ -16,8 +16,8 @@ MonoBehaviour:
   _price: 9
   _title: Find a girl
   _description: Even the skill won't help you...
-  _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
-  _openColor: {r: 1, g: 0.5235849, b: 0.5235849, a: 1}
-  _closedColor: {r: 0.33962262, g: 0.17461729, b: 0.17461729, a: 1}
-  _relationshipIndexes: 08000000
-  _position: {x: -17, y: -262}
+  _mainNodeColor: {r: 0.2027857, g: 0.8773585, b: 0.86526406, a: 1}
+  _openColor: {r: 0.6, g: 1, b: 0.31764707, a: 1}
+  _closedColor: {r: 0.16078432, g: 0.09411766, b: 0.09411766, a: 1}
+  _relationshipIndexes: 000000000a000000
+  _position: {x: -36, y: -106}

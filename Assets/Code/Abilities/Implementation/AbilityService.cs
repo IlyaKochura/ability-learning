@@ -31,10 +31,10 @@ namespace Code.Abilities.Implementation
             _baseAbility = _abilityModels.First(x => x.Index == mainConfig.BaseAbilityIndex);
 
             _currentAbilityModel = _baseAbility;
-            
+
             _baseAbility.Open();
         }
-
+        
         public void SetCurrentAbilityModel(int index)
         {
             _currentAbilityModel = GetAbilityModel(index);
@@ -46,7 +46,7 @@ namespace Code.Abilities.Implementation
             {
                 return;
             }
-            
+
             _pointsModel.SpentPoints(_currentAbilityModel.Price);
             _currentAbilityModel.Open();
         }
@@ -54,7 +54,7 @@ namespace Code.Abilities.Implementation
         public void CloseCurrentAbility()
         {
             _pointsModel.Add(_currentAbilityModel.Price);
-            
+
             _currentAbilityModel.Close();
         }
 
@@ -78,8 +78,8 @@ namespace Code.Abilities.Implementation
             {
                 return false;
             }
-            
-            var relationshipAbilities = _currentAbilityModel.GetOpenedAbilitiesRelationship(_abilityModels);
+
+            var relationshipAbilities = _currentAbilityModel.GetOpenedLinkedModels(_abilityModels);
 
             if (relationshipAbilities == null)
             {
@@ -87,7 +87,7 @@ namespace Code.Abilities.Implementation
             }
 
             var canOpen = false;
-            
+
             foreach (var ability in relationshipAbilities)
             {
                 if (!ability.IsOpen)
@@ -96,12 +96,11 @@ namespace Code.Abilities.Implementation
                 }
 
                 canOpen = true;
-
             }
 
             return canOpen && _pointsModel.EnoughPoints(_currentAbilityModel.Price);
         }
-        
+
         public bool CanCloseCurrentAbility()
         {
             if (_currentAbilityModel == null || !_currentAbilityModel.IsOpen || _currentAbilityModel == _baseAbility)
@@ -109,44 +108,45 @@ namespace Code.Abilities.Implementation
                 return false;
             }
             
-            var relationshipOpenedAbilities = _currentAbilityModel.GetOpenedAbilitiesRelationship(_abilityModels);
+            var linkedOpenedModels = _currentAbilityModel.GetOpenedLinkedModels(_abilityModels);
 
-            foreach (var relationshipOpenAbility in relationshipOpenedAbilities)
+            foreach (var linkedOpenedModel in linkedOpenedModels)
             {
                 _visitedModels.Clear();
 
-                if (CheckModel(_baseAbility, relationshipOpenAbility))
+                if (!CheckModels(_baseAbility, linkedOpenedModel, _currentAbilityModel))
                 {
-                    continue;
+                    return false;
                 }
-                
-                return false;
             }
-            
+
             return true;
         }
 
-        private bool CheckModel(AbilityModel targetAbility, AbilityModel visitAbility)
+        private bool CheckModels(AbilityModel needVisitAbility, AbilityModel targetAbility, AbilityModel currentAbility)
         {
-            if (targetAbility.Index == visitAbility.Index)
+            if (needVisitAbility == targetAbility)
             {
                 return true;
             }
-
-            _visitedModels.Add(visitAbility);
-
-            var visitAbilityRelationships = visitAbility.GetOpenedAbilitiesRelationship(_abilityModels);
-
-            foreach (var ability in visitAbilityRelationships)
+            
+            if (needVisitAbility == currentAbility)
             {
-                if (_visitedModels.Contains(ability))
-                {
-                    continue;
-                }
+                return false;
+            }
 
-                if (CheckModel(ability, targetAbility))
+            _visitedModels.Add(needVisitAbility);
+
+            var linkedAbilities = needVisitAbility.GetOpenedLinkedModels(_abilityModels);
+
+            foreach (var linkedModel in linkedAbilities)
+            {
+                if (!_visitedModels.Contains(linkedModel))
                 {
-                    return true;
+                    if (CheckModels(linkedModel, targetAbility, currentAbility))
+                    {
+                        return true;
+                    }
                 }
             }
 

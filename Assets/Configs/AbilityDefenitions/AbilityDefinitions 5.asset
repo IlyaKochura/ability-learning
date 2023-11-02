@@ -16,8 +16,8 @@ MonoBehaviour:
   _price: 5
   _title: Not burnable
   _description: You've learned IT
-  _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
-  _openColor: {r: 0.9811321, g: 0.5507298, b: 0.5507298, a: 1}
-  _closedColor: {r: 0.16037738, g: 0.08699717, b: 0.08699717, a: 1}
-  _relationshipIndexes: 0400000007000000
-  _position: {x: -424, y: 266}
+  _mainNodeColor: {r: 0.26593092, g: 0.2797451, b: 0.6792453, a: 1}
+  _openColor: {r: 0.6, g: 1, b: 0.31764707, a: 1}
+  _closedColor: {r: 0.16078432, g: 0.09411766, b: 0.09411766, a: 1}
+  _relationshipIndexes: 000000000600000007000000
+  _position: {x: -232, y: 142}

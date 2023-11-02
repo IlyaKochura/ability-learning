@@ -1,6 +1,7 @@
 using Code.Configs;
 using Code.Finance.Contracts;
 using Code.Finance.Models;
+using UnityEngine;
 
 namespace Code.Finance.Implementation
 {
@@ -38,17 +39,18 @@ namespace Code.Finance.Implementation
             
             _points -= count;
             OnPointsChanger?.Invoke(_points);
+            Save();
         }
 
         public void Load()
         {
-            _points = _financeStorage.PointsCount;
+            _points = PlayerPrefs.GetInt("Points");
             OnPointsChanger?.Invoke(_points);
         }
         
         private void Save()
         {
-            _financeStorage.SetPoints(_points);
+            PlayerPrefs.SetInt("Points", _points);
         }
     }
 }

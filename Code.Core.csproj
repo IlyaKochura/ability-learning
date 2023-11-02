@@ -62,6 +62,8 @@
      <Compile Include="Assets\Code\Abilities\Views\AbilityNodeView.cs" />
      <Compile Include="Assets\Code\Abilities\Implementation\AbilityService.cs" />
      <Folder Include="Assets\Code\Finance\Implementation" />
+     <Folder Include="Assets\Code\Saves\Contracts" />
+     <Folder Include="Assets\Code\Saves\Implementation" />
      <Folder Include="Assets\Code\Ui\Screens" />
      <None Include="Assets\Code\Code.Core.asmdef" />
      <Folder Include="Assets\Code\Finance\Installer" />
@@ -77,7 +79,6 @@
      <Folder Include="Assets\Code\Abilities\Contracts" />
      <Folder Include="Assets\Code\Abilities\Views" />
      <Folder Include="Assets\Code\Abilities" />
-     <Folder Include="Assets\Code" />
      <Folder Include="Assets\Code\Ui\InstallerUI" />
      <Reference Include="UnityEngine">
      <HintPath>D:\UnityEngine\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -772,6 +773,10 @@
     <ProjectReference Include="Gamelib.ScreenManager.Runtime.csproj">
       <Project>{29991f45-8465-5676-fd6a-ccb78b6a4f18}</Project>
       <Name>Gamelib.ScreenManager.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="GameLib.ObjectPool.Runtime.csproj">
+      <Project>{5043f9d8-a4a7-27d6-e5fa-83df5c662b51}</Project>
+      <Name>GameLib.ObjectPool.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

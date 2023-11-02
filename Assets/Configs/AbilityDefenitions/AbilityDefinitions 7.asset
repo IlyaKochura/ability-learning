@@ -16,8 +16,8 @@ MonoBehaviour:
   _price: 7
   _title: Keep up on time
   _description: Wow, you made it to the deadline
-  _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
-  _openColor: {r: 1, g: 0.495283, b: 0.495283, a: 1}
-  _closedColor: {r: 0.3207547, g: 0.17096831, b: 0.17096831, a: 1}
-  _relationshipIndexes: 0500000006000000
-  _position: {x: -714, y: 164}
+  _mainNodeColor: {r: 0.26666668, g: 0.2784314, b: 0.6784314, a: 1}
+  _openColor: {r: 0.6, g: 1, b: 0.31764707, a: 1}
+  _closedColor: {r: 0.16078432, g: 0.09411766, b: 0.09411766, a: 1}
+  _relationshipIndexes: 0500000008000000
+  _position: {x: -479, y: 248}

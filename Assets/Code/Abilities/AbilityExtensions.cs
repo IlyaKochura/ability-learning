@@ -6,7 +6,7 @@ namespace Code.Abilities
 {
     public static class AbilityExtensions
     {
-        public static AbilityModel[] GetOpenedAbilitiesRelationship(this AbilityModel abilityModel,
+        public static AbilityModel[] GetOpenedLinkedModels(this AbilityModel abilityModel,
             AbilityModel[] abilityModels)
         {
             var indexesRelationship = abilityModel.RelationshipIndexes;

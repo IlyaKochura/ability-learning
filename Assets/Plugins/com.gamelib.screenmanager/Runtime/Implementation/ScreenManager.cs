@@ -53,7 +53,7 @@ namespace ScreenManager.Runtime.Implementation
 
             if (screen == null)
             {
-                Debug.LogError($"Not impossible close already closed Screen");
+                Debug.LogError($"Impossible close already closed Screen");
                 return;
             }
             

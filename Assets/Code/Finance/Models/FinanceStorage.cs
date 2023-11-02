@@ -1,18 +1,10 @@
 using System;
-using UnityEngine;
 
 namespace Code.Finance.Models
 {
-    [Serializable][CreateAssetMenu(menuName = "Configs/Finance/FinanceStorage")]
-    public class FinanceStorage : ScriptableObject
+    [Serializable]
+    public class FinanceStorage
     {
-        [SerializeField] private int _pointsCount;
-
-        public int PointsCount => _pointsCount;
-
-        public void SetPoints(int points)
-        {
-            _pointsCount = points;
-        }
+        public int PointsCount { get; set; }
     }
 }

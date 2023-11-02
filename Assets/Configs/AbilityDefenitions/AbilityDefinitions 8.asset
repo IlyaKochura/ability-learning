@@ -16,8 +16,8 @@ MonoBehaviour:
   _price: 8
   _title: Get cured of alcoholism
   _description: Did you quit your job?
-  _mainNodeColor: {r: 1, g: 0, b: 0, a: 1}
-  _openColor: {r: 0.9811321, g: 0.48593804, b: 0.48593804, a: 1}
-  _closedColor: {r: 0.3207547, g: 0.1739943, b: 0.1739943, a: 1}
-  _relationshipIndexes: 0000000009000000
-  _position: {x: 73, y: -51}
+  _mainNodeColor: {r: 0.26666668, g: 0.2784314, b: 0.6784314, a: 1}
+  _openColor: {r: 0.6, g: 1, b: 0.31764707, a: 1}
+  _closedColor: {r: 0.16078432, g: 0.09411766, b: 0.09411766, a: 1}
+  _relationshipIndexes: 0700000006000000
+  _position: {x: -728, y: 150}
