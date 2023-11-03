@@ -14,7 +14,7 @@ namespace Code.Ui.Screens
         private readonly AbilityView _view;
         private readonly IAbilityViewFactory _abilityViewFactory;
         private readonly IAbilityService _abilityService;
-        private readonly IPointsModel _pointsModel;
+        private readonly IPointsService _pointsService;
         private readonly MainConfig _mainConfig;
 
         private Dictionary<int, AbilityNodeView> _dictionaryModelViewPairs = new();
@@ -22,14 +22,14 @@ namespace Code.Ui.Screens
         private AbilityNodeView _currentAbilityView;
 
         public AbilityScreen(AbilityView view, IScreenManager screenManager, IAbilityViewFactory abilityViewFactory,
-            IAbilityService abilityService, IPointsModel pointsModel)
+            IAbilityService abilityService, IPointsService pointsService)
         {
             _view = view;
             _abilityViewFactory = abilityViewFactory;
             _abilityService = abilityService;
-            _pointsModel = pointsModel;
+            _pointsService = pointsService;
 
-            pointsModel.OnPointsChanger += _ => UpdateInteractableButtons();
+            pointsService.OnPointsChanger += _ => UpdateInteractableButtons();
             
             _view.CloseClick += screenManager.GoBack;
 

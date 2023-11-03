@@ -8,18 +8,18 @@ namespace Code.Ui.Screens
     {
         private readonly MainView _view;
         private readonly IScreenManager _screenManager;
-        private readonly IPointsModel _pointsModel;
+        private readonly IPointsService _pointsService;
 
-        public MainScreen(MainView view, IScreenManager screenManager, IPointsModel pointsModel)
+        public MainScreen(MainView view, IScreenManager screenManager, IPointsService pointsService)
         {
             _view = view;
             _screenManager = screenManager;
-            _pointsModel = pointsModel;
+            _pointsService = pointsService;
 
             _view.OpenAbilityClick += ShowAbilityWindow;
             _view.EarnPointsClick += EarnPoints;
 
-            _pointsModel.OnPointsChanger += UpdatePointses;
+            _pointsService.OnPointsChanger += UpdatePoints;
         }
 
         private void ShowAbilityWindow()
@@ -29,17 +29,19 @@ namespace Code.Ui.Screens
 
         public void Show()
         {
+            _view.UpdatePoints($"Points {_pointsService.GetPoints()}");
+            
             _view.Show();
         }
 
-        private void UpdatePointses(int restorePoints)
+        private void UpdatePoints(int restorePoints)
         {
             _view.UpdatePoints($"Points {restorePoints}");
         }
         
         private void EarnPoints()
         {
-            _pointsModel.Add(10);
+            _pointsService.Add(10);
         }
 
         public void Hide()

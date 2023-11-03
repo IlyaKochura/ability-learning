@@ -42,32 +42,38 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Code\Abilities\Contracts\IAbilityView.cs" />
-     <Compile Include="Assets\Code\Saves\Contracts\ISaveble.cs" />
+     <Compile Include="Assets\Code\Saves\Contracts\ISaveService.cs" />
      <Compile Include="Assets\Code\Ui\InstallerUI\InstallerUi.cs" />
-     <Compile Include="Assets\Code\Abilities\Implementation\LinkDrawer.cs" />
+     <Compile Include="Assets\Code\Saves\Installer\SaveServiceInstaller.cs" />
      <Compile Include="Assets\Code\Configs\MainConfig.cs" />
      <Compile Include="Assets\Code\Abilities\Contracts\IAbilityService.cs" />
      <Compile Include="Assets\Code\Abilities\Installer\AbilityInstaller.cs" />
      <Compile Include="Assets\Code\Abilities\Implementation\AbilityViewFactory.cs" />
-     <Compile Include="Assets\Code\Finance\Implementation\PointsModel.cs" />
+     <Compile Include="Assets\Code\Finance\Save\PointsSaveModel.cs" />
+     <Compile Include="Assets\Code\Finance\Implementation\PointsService.cs" />
      <Compile Include="Assets\Code\Ui\Screens\MainScreen.cs" />
      <Compile Include="Assets\Code\Ui\Views\AbilityView.cs" />
      <Compile Include="Assets\Code\Ui\Screens\AbilityScreen.cs" />
+     <Compile Include="Assets\Code\Abilities\Save\AbilitySaveModel.cs" />
+     <Compile Include="Assets\Code\Saves\Implementation\SaveService.cs" />
      <Compile Include="Assets\Code\Abilities\AbilityDefinition.cs" />
      <Compile Include="Assets\Code\Ui\Views\MainView.cs" />
      <Compile Include="Assets\Code\Abilities\Models\AbilityModel.cs" />
      <Compile Include="Assets\Code\Finance\Installer\FinanceInstaller.cs" />
      <Compile Include="Assets\Code\Abilities\AbilityExtensions.cs" />
      <Compile Include="Assets\Code\Finance\Models\FinanceStorage.cs" />
-     <Compile Include="Assets\Code\Finance\Contracts\IPointsModel.cs" />
+     <Compile Include="Assets\Code\Finance\Contracts\IPointsService.cs" />
      <Compile Include="Assets\Code\Abilities\Contracts\IAbilityViewFactory.cs" />
-     <Compile Include="Assets\Code\Abilities\Contracts\ILinkDrawer.cs" />
      <Compile Include="Assets\Code\Abilities\Views\AbilityNodeView.cs" />
      <Compile Include="Assets\Code\Abilities\Implementation\AbilityService.cs" />
+     <Compile Include="Assets\Code\Saves\Contracts\ISaveModel.cs" />
+     <Compile Include="Assets\Code\Saves\Utils\SaveUtils.cs" />
      <Folder Include="Assets\Code\Saves\Implementation" />
+     <Folder Include="Assets\Code\Saves\Installer" />
      <Folder Include="Assets\Code\Finance\Implementation" />
      <Folder Include="Assets\Code\Saves" />
      <Folder Include="Assets\Code\Ui\Screens" />
+     <Folder Include="Assets\Code\Finance\Save" />
      <None Include="Assets\Code\Code.Core.asmdef" />
      <Folder Include="Assets\Code\Finance\Installer" />
      <Folder Include="Assets\Code\Finance" />
@@ -79,12 +85,14 @@
      <Folder Include="Assets\Code\Abilities\Installer" />
      <Folder Include="Assets\Code\Finance\Models" />
      <Folder Include="Assets\Code\Configs" />
+     <Folder Include="Assets\Code\Saves\Utils" />
      <Folder Include="Assets\Code\Abilities\Contracts" />
      <Folder Include="Assets\Code\Abilities\Views" />
      <Folder Include="Assets\Code\Abilities" />
      <Folder Include="Assets\Code" />
      <Folder Include="Assets\Code\Ui\InstallerUI" />
      <Folder Include="Assets\Code\Saves\Contracts" />
+     <Folder Include="Assets\Code\Abilities\Save" />
      <Reference Include="UnityEngine">
      <HintPath>D:\UnityEngine\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

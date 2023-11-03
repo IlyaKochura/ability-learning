@@ -32,17 +32,10 @@ namespace Code.Ui.InstallerUI
 
         public override void Start()
         {
-            ResolveScreenManager();
-
-            var saves = Container.ResolveAll<ISaveble>();
-
-            foreach (var save in saves)
-            {
-                save.Load();
-            }
+            ResolveAndScreenManager();
         }
 
-        private void ResolveScreenManager()
+        private void ResolveAndScreenManager()
         {
             var screenManager = Container.Resolve<IScreenManager>();
             screenManager.Resolve(Container);

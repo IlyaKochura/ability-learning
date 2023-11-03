@@ -10,13 +10,11 @@ namespace Code.Abilities.Implementation
     public class AbilityViewFactory : IAbilityViewFactory
     {
         private readonly IObjectPool _objectPool;
-        private readonly ILinkDrawer _linkDrawer;
         private readonly AbilityNodeView _prefab;
         
-        public AbilityViewFactory(MainConfig mainConfig, IObjectPool objectPool, ILinkDrawer linkDrawer)
+        public AbilityViewFactory(MainConfig mainConfig, IObjectPool objectPool)
         {
             _objectPool = objectPool;
-            _linkDrawer = linkDrawer;
             _prefab = mainConfig.AbilityNodeViewPrefab;
         }
         

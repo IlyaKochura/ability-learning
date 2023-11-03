@@ -7,7 +7,6 @@ namespace Code.Abilities.Installer
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<LinkDrawer>().AsSingle();
             Container.BindInterfacesTo<AbilityViewFactory>().AsSingle();
             Container.BindInterfacesTo<AbilityService>().AsSingle().NonLazy();
         }

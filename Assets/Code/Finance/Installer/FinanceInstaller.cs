@@ -1,4 +1,3 @@
-using Code.Finance.Contracts;
 using Code.Finance.Implementation;
 using Zenject;
 
@@ -8,7 +7,7 @@ namespace Code.Finance.Installer
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<PointsModel>().AsSingle();
+            Container.BindInterfacesTo<PointsService>().AsSingle();
         }
     }
 }

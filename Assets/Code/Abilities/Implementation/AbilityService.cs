@@ -1,38 +1,21 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using Code.Abilities.Contracts;
 using Code.Abilities.Models;
+using Code.Abilities.Save;
 using Code.Configs;
 using Code.Finance.Contracts;
 using Code.Saves.Contracts;
-using ModestTree;
-using Newtonsoft.Json;
-using UnityEngine;
 
 namespace Code.Abilities.Implementation
 {
-    public class AbilityService : IAbilityService, ISaveble
+    public class AbilityService : IAbilityService
     {
-        private class AbilitySaveModel
-        {
-            [DataMember] public Dictionary<int, bool> AbilityModels { get; private set; } = new();
-
-            public void SetModels(AbilityModel[] abilityModels)
-            {
-                AbilityModels.Clear();
-
-                foreach (var abilityModel in abilityModels)
-                {
-                    AbilityModels.Add(abilityModel.Index, abilityModel.IsOpen);
-                }
-            }
-        }
-
         private HashSet<AbilityModel> _visitedModels = new();
 
         private readonly MainConfig _mainConfig;
-        private readonly IPointsModel _pointsModel;
+        private readonly IPointsService _pointsService;
+        private readonly ISaveService _saveService;
         private readonly AbilityModel _baseAbility;
 
         private AbilityModel _currentAbilityModel;
@@ -42,10 +25,11 @@ namespace Code.Abilities.Implementation
         public AbilityModel[] AbilityModels => _abilityModels;
         public AbilityModel CurrentAbilityModel => _currentAbilityModel;
 
-        public AbilityService(MainConfig mainConfig, IPointsModel pointsModel)
+        public AbilityService(MainConfig mainConfig, IPointsService pointsService, ISaveService saveService)
         {
             _mainConfig = mainConfig;
-            _pointsModel = pointsModel;
+            _pointsService = pointsService;
+            _saveService = saveService;
 
             _abilityModels = GetModels();
 
@@ -56,7 +40,8 @@ namespace Code.Abilities.Implementation
             _baseAbility.SetOpen(true);
 
             _saveModel = new AbilitySaveModel();
-            _saveModel.SetModels(_abilityModels);
+           
+            Load();
         }
 
         public void SetCurrentAbilityModel(int index)
@@ -66,19 +51,19 @@ namespace Code.Abilities.Implementation
 
         public void OpenCurrentAbility()
         {
-            if (!_pointsModel.EnoughPoints(_currentAbilityModel.Price))
+            if (!_pointsService.EnoughPoints(_currentAbilityModel.Price))
             {
                 return;
             }
 
-            _pointsModel.SpentPoints(_currentAbilityModel.Price);
+            _pointsService.SpentPoints(_currentAbilityModel.Price);
             _currentAbilityModel.SetOpen(true);
             Save();
         }
 
         public void CloseCurrentAbility()
         {
-            _pointsModel.Add(_currentAbilityModel.Price);
+            _pointsService.Add(_currentAbilityModel.Price);
 
             _currentAbilityModel.SetOpen(false);
             Save();
@@ -124,7 +109,19 @@ namespace Code.Abilities.Implementation
                 canOpen = true;
             }
 
-            return canOpen && _pointsModel.EnoughPoints(_currentAbilityModel.Price);
+            return canOpen && _pointsService.EnoughPoints(_currentAbilityModel.Price);
+        }
+
+        public void CloseAll()
+        {
+            foreach (var abilityModel in _abilityModels)
+            {
+                if (abilityModel.Index != _mainConfig.BaseAbilityIndex)
+                {
+                    abilityModel.SetOpen(false);
+                    _pointsService.Add(abilityModel.Price);
+                }
+            }
         }
 
         public bool CanCloseCurrentAbility()
@@ -182,27 +179,19 @@ namespace Code.Abilities.Implementation
         public void Save()
         {
             _saveModel.SetModels(_abilityModels);
-            var save = JsonConvert.SerializeObject(_saveModel);
-            PlayerPrefs.SetString("AbilitySave", save);
+            _saveService.Save(_saveModel);
         }
-
+        
         public void Load()
         {
-            var saveString = PlayerPrefs.GetString("AbilitySave");
+            var saveModel = _saveService.GetSave<AbilitySaveModel>();
 
-            if (saveString.IsEmpty() || saveString == null)
+            if (saveModel == null)
             {
                 return;
             }
-
-            var abilitiesSave = JsonConvert.DeserializeObject<AbilitySaveModel>(saveString);
-
-            if (abilitiesSave == null)
-            {
-                return;
-            }
-
-            foreach (var abilitySave in abilitiesSave.AbilityModels)
+        
+            foreach (var abilitySave in saveModel.AbilityModels)
             {
                 _abilityModels.First(model => model.Index == abilitySave.Key).SetOpen(abilitySave.Value);
             }
