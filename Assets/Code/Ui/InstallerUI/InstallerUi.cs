@@ -1,3 +1,4 @@
+using Code.Saves.Contracts;
 using Code.Ui.Screens;
 using Code.Ui.Views;
 using ScreenManager.Runtime.Contracts;
@@ -32,6 +33,13 @@ namespace Code.Ui.InstallerUI
         public override void Start()
         {
             ResolveScreenManager();
+
+            var saves = Container.ResolveAll<ISaveble>();
+
+            foreach (var save in saves)
+            {
+                save.Load();
+            }
         }
 
         private void ResolveScreenManager()

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Code.Finance.Contracts
 {
     public interface IPointsModel
@@ -10,6 +8,5 @@ namespace Code.Finance.Contracts
         public void Add(int count);
         public bool EnoughPoints(int count);
         public void SpentPoints(int count);
-        public void Load();
     }
 }

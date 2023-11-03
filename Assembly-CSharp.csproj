@@ -916,6 +916,10 @@
       <Project>{3ce1bde1-85d4-15e5-0953-5f7eaab32f8e}</Project>
       <Name>Code.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="Gamelib.ScreenManager.Runtime.csproj">
+      <Project>{29991f45-8465-5676-fd6a-ccb78b6a4f18}</Project>
+      <Name>Gamelib.ScreenManager.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="Zenject-Editor.csproj">
       <Project>{ad09505d-27b7-21ed-52ea-28e7747a1131}</Project>
       <Name>Zenject-Editor</Name>
@@ -931,10 +935,6 @@
     <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
       <Project>{e5918106-a852-180d-51da-509668f8e1db}</Project>
       <Name>Zenject-PoolMonitor-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Gamelib.ScreenManager.Runtime.csproj">
-      <Project>{29991f45-8465-5676-fd6a-ccb78b6a4f18}</Project>
-      <Name>Gamelib.ScreenManager.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="GameLib.ObjectPool.Runtime.csproj">
       <Project>{5043f9d8-a4a7-27d6-e5fa-83df5c662b51}</Project>

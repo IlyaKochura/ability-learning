@@ -41,10 +41,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\com.gamelib.objectpool\Runtime\Contracts\IObjectPool.cs" />
-     <Compile Include="Assets\Plugins\com.gamelib.objectpool\Runtime\Pool\ObjectPool.cs" />
      <Compile Include="Assets\Plugins\com.gamelib.objectpool\Runtime\Contracts\IRecycle.cs" />
+     <Compile Include="Assets\Plugins\com.gamelib.objectpool\Runtime\Pool\ObjectPool.cs" />
      <Compile Include="Assets\Plugins\com.gamelib.objectpool\Runtime\Installer\ObjectPoolInstaller.cs" />
+     <Compile Include="Assets\Plugins\com.gamelib.objectpool\Runtime\Contracts\IObjectPool.cs" />
      <Folder Include="Assets\Plugins\com.gamelib.objectpool\Runtime" />
      <Folder Include="Assets\Plugins\com.gamelib.objectpool\Runtime\Installer" />
      <None Include="Assets\Plugins\com.gamelib.objectpool\Runtime\GameLib.ObjectPool.Runtime.asmdef" />

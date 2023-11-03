@@ -1,14 +1,34 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using Code.Abilities.Contracts;
 using Code.Abilities.Models;
 using Code.Configs;
 using Code.Finance.Contracts;
+using Code.Saves.Contracts;
+using ModestTree;
+using Newtonsoft.Json;
+using UnityEngine;
 
 namespace Code.Abilities.Implementation
 {
-    public class AbilityService : IAbilityService
+    public class AbilityService : IAbilityService, ISaveble
     {
+        private class AbilitySaveModel
+        {
+            [DataMember] public Dictionary<int, bool> AbilityModels { get; private set; } = new();
+
+            public void SetModels(AbilityModel[] abilityModels)
+            {
+                AbilityModels.Clear();
+
+                foreach (var abilityModel in abilityModels)
+                {
+                    AbilityModels.Add(abilityModel.Index, abilityModel.IsOpen);
+                }
+            }
+        }
+
         private HashSet<AbilityModel> _visitedModels = new();
 
         private readonly MainConfig _mainConfig;
@@ -17,6 +37,7 @@ namespace Code.Abilities.Implementation
 
         private AbilityModel _currentAbilityModel;
         private AbilityModel[] _abilityModels;
+        private readonly AbilitySaveModel _saveModel;
 
         public AbilityModel[] AbilityModels => _abilityModels;
         public AbilityModel CurrentAbilityModel => _currentAbilityModel;
@@ -32,9 +53,12 @@ namespace Code.Abilities.Implementation
 
             _currentAbilityModel = _baseAbility;
 
-            _baseAbility.Open();
+            _baseAbility.SetOpen(true);
+
+            _saveModel = new AbilitySaveModel();
+            _saveModel.SetModels(_abilityModels);
         }
-        
+
         public void SetCurrentAbilityModel(int index)
         {
             _currentAbilityModel = GetAbilityModel(index);
@@ -48,14 +72,16 @@ namespace Code.Abilities.Implementation
             }
 
             _pointsModel.SpentPoints(_currentAbilityModel.Price);
-            _currentAbilityModel.Open();
+            _currentAbilityModel.SetOpen(true);
+            Save();
         }
 
         public void CloseCurrentAbility()
         {
             _pointsModel.Add(_currentAbilityModel.Price);
 
-            _currentAbilityModel.Close();
+            _currentAbilityModel.SetOpen(false);
+            Save();
         }
 
         public AbilityModel[] GetModels()
@@ -107,7 +133,7 @@ namespace Code.Abilities.Implementation
             {
                 return false;
             }
-            
+
             var linkedOpenedModels = _currentAbilityModel.GetOpenedLinkedModels(_abilityModels);
 
             foreach (var linkedOpenedModel in linkedOpenedModels)
@@ -129,7 +155,7 @@ namespace Code.Abilities.Implementation
             {
                 return true;
             }
-            
+
             if (needVisitAbility == currentAbility)
             {
                 return false;
@@ -151,6 +177,35 @@ namespace Code.Abilities.Implementation
             }
 
             return false;
+        }
+
+        public void Save()
+        {
+            _saveModel.SetModels(_abilityModels);
+            var save = JsonConvert.SerializeObject(_saveModel);
+            PlayerPrefs.SetString("AbilitySave", save);
+        }
+
+        public void Load()
+        {
+            var saveString = PlayerPrefs.GetString("AbilitySave");
+
+            if (saveString.IsEmpty() || saveString == null)
+            {
+                return;
+            }
+
+            var abilitiesSave = JsonConvert.DeserializeObject<AbilitySaveModel>(saveString);
+
+            if (abilitiesSave == null)
+            {
+                return;
+            }
+
+            foreach (var abilitySave in abilitiesSave.AbilityModels)
+            {
+                _abilityModels.First(model => model.Index == abilitySave.Key).SetOpen(abilitySave.Value);
+            }
         }
     }
 }

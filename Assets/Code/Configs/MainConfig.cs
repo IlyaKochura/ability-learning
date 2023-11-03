@@ -11,6 +11,7 @@ namespace Code.Configs
     public class MainConfig : ScriptableObjectInstaller
     {
         [SerializeField] private AbilityNodeView _abilityNodeViewPrefab;
+        [SerializeField] private LineRenderer _linePrefab;
         [SerializeField] private FinanceStorage _financeStorage;
         [SerializeField] private AbilityDefinition[] _abilityDefinitions;
         [SerializeField] private int _baseAbilityIndex;
@@ -19,7 +20,8 @@ namespace Code.Configs
         public AbilityDefinition[] AbilityDefinitions => _abilityDefinitions;
         public AbilityNodeView AbilityNodeViewPrefab => _abilityNodeViewPrefab;
         public int BaseAbilityIndex => _baseAbilityIndex;
-
+        public LineRenderer LinePrefab => _linePrefab;
+        
         public override void InstallBindings()
         {
             Container.Bind<MainConfig>().FromInstance(this).AsSingle();

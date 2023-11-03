@@ -28,7 +28,7 @@ namespace Code.Abilities
                 MainNodeColor = _mainNodeColor,
                 OpenColor = _openColor,
                 ClosedColor = _closedColor,
-                RelationshipIndexes = _relationshipIndexes,
+                LinkedIndexes = _relationshipIndexes,
                 Position = _position
             };
 

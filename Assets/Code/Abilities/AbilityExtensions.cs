@@ -9,7 +9,7 @@ namespace Code.Abilities
         public static AbilityModel[] GetOpenedLinkedModels(this AbilityModel abilityModel,
             AbilityModel[] abilityModels)
         {
-            var indexesRelationship = abilityModel.RelationshipIndexes;
+            var indexesRelationship = abilityModel.LinkedIndexes;
             var openedLinkedAbilities = new List<AbilityModel>();
 
             foreach (var index in indexesRelationship)
@@ -25,6 +25,28 @@ namespace Code.Abilities
                 {
                     openedLinkedAbilities.Add(linkedNode);
                 }
+            }
+
+            return openedLinkedAbilities.ToArray();
+        }
+        
+        public static AbilityModel[] GetAllLinkedModels(this AbilityModel abilityModel,
+            AbilityModel[] abilityModels)
+        {
+            var indexesRelationship = abilityModel.LinkedIndexes;
+            var openedLinkedAbilities = new List<AbilityModel>();
+
+            foreach (var index in indexesRelationship)
+            {
+                var linkedNode = abilityModels.FirstOrDefault(node => node.Index == index);
+
+                if (linkedNode == default)
+                {
+                    return null;
+                }
+
+                openedLinkedAbilities.Add(linkedNode);
+                
             }
 
             return openedLinkedAbilities.ToArray();

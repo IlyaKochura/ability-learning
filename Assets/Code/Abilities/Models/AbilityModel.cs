@@ -12,7 +12,7 @@ namespace Code.Abilities.Models
         public Color MainNodeColor { get; set; }
         public Color OpenColor { get; set; }
         public Color ClosedColor { get; set; }
-        public int[] RelationshipIndexes { get; set; }
+        public int[] LinkedIndexes { get; set; }
         public bool IsOpen { get; private set; }
         public Vector2 Position { get; set; }
 
@@ -26,15 +26,10 @@ namespace Code.Abilities.Models
         {
             IsOpen = open;
         }
-        
-        public void Open()
+
+        public void SetOpen(bool open)
         {
-            IsOpen = true;
-        }
-        
-        public void Close()
-        {
-            IsOpen = false;
+            IsOpen = open;
         }
         
         public override string ToString()

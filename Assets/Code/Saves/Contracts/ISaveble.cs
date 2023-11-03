@@ -1,7 +1,7 @@
 namespace Code.Saves.Contracts
 {
-    public class ISaveble
+    public interface ISaveble
     {
-        
+        public void Load();
     }
 }

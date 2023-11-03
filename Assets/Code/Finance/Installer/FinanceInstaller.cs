@@ -10,11 +10,5 @@ namespace Code.Finance.Installer
         {
             Container.BindInterfacesTo<PointsModel>().AsSingle();
         }
-
-        public override void Start()
-        {
-            var model = Container.Resolve<IPointsModel>();
-            model.Load();
-        }
     }
 }

@@ -1,11 +1,12 @@
 using Code.Configs;
 using Code.Finance.Contracts;
 using Code.Finance.Models;
+using Code.Saves.Contracts;
 using UnityEngine;
 
 namespace Code.Finance.Implementation
 {
-    public class PointsModel : IPointsModel
+    public class PointsModel : IPointsModel, ISaveble
     {
         private readonly FinanceStorage _financeStorage;
         
