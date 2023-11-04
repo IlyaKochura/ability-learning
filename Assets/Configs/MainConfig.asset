@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f9a62279b1437eafd9e6ac3ac8857d, type: 3}
   m_Name: MainConfig
   m_EditorClassIdentifier: 
+  _addPointsStep: 15
   _abilityNodeViewPrefab: {fileID: 277735112136860497, guid: 671f4e892a77afa4fbab4398573e1c1a, type: 3}
-  _linePrefab: {fileID: 2493467595440074447, guid: 7f8c7b9210be8cd44ad680541066cd2c, type: 3}
   _abilityDefinitions:
   - {fileID: 11400000, guid: 0bfd1d008e8c73744b9b66a69f8dda93, type: 2}
   - {fileID: 11400000, guid: 5892f9633fc96fb45a2f7f605cdcdc11, type: 2}

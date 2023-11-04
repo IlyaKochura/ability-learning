@@ -1,7 +1,6 @@
 using System;
 using Code.Abilities;
 using Code.Abilities.Views;
-using Code.Finance.Models;
 using UnityEngine;
 using Zenject;
 
@@ -10,18 +9,19 @@ namespace Code.Configs
     [Serializable][CreateAssetMenu(menuName = "Configs/MainConfig")]
     public class MainConfig : ScriptableObjectInstaller
     {
+        [Header("Finance")]
+        [SerializeField] private int _addPointsStep;
+        [Header("Prefabs")]
         [SerializeField] private AbilityNodeView _abilityNodeViewPrefab;
-        [SerializeField] private LineRenderer _linePrefab;
-        [SerializeField] private FinanceStorage _financeStorage;
+        [Header("AbilityDefinitions")]
         [SerializeField] private AbilityDefinition[] _abilityDefinitions;
         [SerializeField] private int _baseAbilityIndex;
 
-        public FinanceStorage FinanceStorage => _financeStorage;
+        public int AddPointsStep => _addPointsStep;
         public AbilityDefinition[] AbilityDefinitions => _abilityDefinitions;
         public AbilityNodeView AbilityNodeViewPrefab => _abilityNodeViewPrefab;
         public int BaseAbilityIndex => _baseAbilityIndex;
-        public LineRenderer LinePrefab => _linePrefab;
-        
+
         public override void InstallBindings()
         {
             Container.Bind<MainConfig>().FromInstance(this).AsSingle();

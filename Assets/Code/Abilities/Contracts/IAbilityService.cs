@@ -11,6 +11,7 @@ namespace Code.Abilities.Contracts
         public bool CanCloseCurrentAbility();
         public void OpenCurrentAbility();
         public void CloseCurrentAbility();
-        public AbilityModel[] GetModels();
+        public bool CanCloseAllAbility();
+        public void CloseAllOpenedAbility();
     }
 }

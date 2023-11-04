@@ -1,3 +1,4 @@
+using Code.Configs;
 using Code.Finance.Contracts;
 using Code.Finance.Save;
 using Code.Saves.Contracts;
@@ -7,10 +8,13 @@ namespace Code.Finance.Implementation
     public class PointsService : IPointsService
     {
         private readonly ISaveService _saveService;
-        public PointsService(ISaveService saveService)
+        private readonly MainConfig _mainConfig;
+
+        public PointsService(ISaveService saveService, MainConfig mainConfig)
         {
             _saveService = saveService;
-            
+            _mainConfig = mainConfig;
+
             _pointsSaveModel = new PointsSaveModel();
             
             Load();
@@ -66,11 +70,6 @@ namespace Code.Finance.Implementation
         {
             _pointsSaveModel.SetPoints(_points);
             _saveService.Save(_pointsSaveModel);
-        }
-
-        public void Initialize()
-        {
-            OnPointsChanger?.Invoke(_points);
         }
     }
 }

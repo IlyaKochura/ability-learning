@@ -30,26 +30,19 @@ namespace Code.Abilities
             return openedLinkedAbilities.ToArray();
         }
         
-        public static AbilityModel[] GetAllLinkedModels(this AbilityModel abilityModel,
-            AbilityModel[] abilityModels)
+        public static AbilityModel[] GetAllOpenedModels(this AbilityModel[] abilityModels)
         {
-            var indexesRelationship = abilityModel.LinkedIndexes;
-            var openedLinkedAbilities = new List<AbilityModel>();
+            var openedAbilities = new List<AbilityModel>();
 
-            foreach (var index in indexesRelationship)
+            foreach (var model in abilityModels)
             {
-                var linkedNode = abilityModels.FirstOrDefault(node => node.Index == index);
-
-                if (linkedNode == default)
+                if (model.IsOpen)
                 {
-                    return null;
+                    openedAbilities.Add(model);
                 }
-
-                openedLinkedAbilities.Add(linkedNode);
-                
             }
 
-            return openedLinkedAbilities.ToArray();
+            return openedAbilities.ToArray();
         }
     }
 }

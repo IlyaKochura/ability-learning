@@ -69,7 +69,7 @@ namespace Code.Abilities.Implementation
             Save();
         }
 
-        public AbilityModel[] GetModels()
+        private AbilityModel[] GetModels()
         {
             var abilityDefinitions = _mainConfig.AbilityDefinitions;
 
@@ -112,9 +112,27 @@ namespace Code.Abilities.Implementation
             return canOpen && _pointsService.EnoughPoints(_currentAbilityModel.Price);
         }
 
-        public void CloseAll()
+        public bool CanCloseAllAbility()
         {
-            foreach (var abilityModel in _abilityModels)
+            foreach (var model in _abilityModels)
+            {
+                if (model.Index == _baseAbility.Index)
+                {
+                    continue;
+                }
+
+                if (model.IsOpen)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void CloseAllOpenedAbility()
+        {
+            foreach (var abilityModel in _abilityModels.GetAllOpenedModels())
             {
                 if (abilityModel.Index != _mainConfig.BaseAbilityIndex)
                 {

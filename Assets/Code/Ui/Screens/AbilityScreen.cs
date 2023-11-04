@@ -14,10 +14,9 @@ namespace Code.Ui.Screens
         private readonly AbilityView _view;
         private readonly IAbilityViewFactory _abilityViewFactory;
         private readonly IAbilityService _abilityService;
-        private readonly IPointsService _pointsService;
         private readonly MainConfig _mainConfig;
 
-        private Dictionary<int, AbilityNodeView> _dictionaryModelViewPairs = new();
+        private Dictionary<int, AbilityNodeView> _dictionaryIndexViewPairs = new();
 
         private AbilityNodeView _currentAbilityView;
 
@@ -27,14 +26,14 @@ namespace Code.Ui.Screens
             _view = view;
             _abilityViewFactory = abilityViewFactory;
             _abilityService = abilityService;
-            _pointsService = pointsService;
 
             pointsService.OnPointsChanger += _ => UpdateInteractableButtons();
             
-            _view.CloseClick += screenManager.GoBack;
+            _view.ExitClick += screenManager.GoBack;
 
-            _view.OpenButton.onClick.AddListener(OpenAbility);
-            _view.CloseButton.onClick.AddListener(CloseAbility);
+            _view.CloseClick += CloseAbility;
+            _view.OpenClick += OpenAbility;
+            _view.CloseAllClick += CloseAllAbility;
         }
 
         public void Show()
@@ -56,7 +55,7 @@ namespace Code.Ui.Screens
 
                 view.SetAction(SetCurrentNode, model.Index);
 
-                _dictionaryModelViewPairs.Add(model.Index, view);
+                _dictionaryIndexViewPairs.Add(model.Index, view);
             }
         }
 
@@ -75,15 +74,24 @@ namespace Code.Ui.Screens
 
         private AbilityNodeView GetAbilityNodeView(int index)
         {
-            var abilityNodeView = _dictionaryModelViewPairs.FirstOrDefault(nodeView => nodeView.Key == index).Value;
+            var abilityNodeView = _dictionaryIndexViewPairs.FirstOrDefault(nodeView => nodeView.Key == index).Value;
 
             return abilityNodeView;
         }
 
         private void UpdateInteractableButtons()
         {
-            _view.CloseButton.interactable = _abilityService.CanCloseCurrentAbility();
-            _view.OpenButton.interactable = _abilityService.CanOpenCurrentAbility();
+            _view.SetInteractableCloseButton(_abilityService.CanCloseCurrentAbility());
+            _view.SetInteractableOpenButton(_abilityService.CanOpenCurrentAbility());
+            _view.SetInteractableCloseAllButton(_abilityService.CanCloseAllAbility());
+        }
+        
+        private void CloseAllAbility()
+        {
+            _abilityService.CloseAllOpenedAbility();
+            
+            UpdateInteractableButtons();
+            UpdateAllViews();
         }
 
         private void OpenAbility()
@@ -108,14 +116,29 @@ namespace Code.Ui.Screens
             }
         }
 
+        private void UpdateAllViews()
+        {
+            foreach (var indexViewPair in _dictionaryIndexViewPairs)
+            {
+                var model = _abilityService.AbilityModels.FirstOrDefault(model => model.Index == indexViewPair.Key);
+
+                if (model == default)
+                {
+                    continue;
+                }
+                
+                indexViewPair.Value.UpdateView(model);
+            }
+        }
+
         public void Hide()
         {
-            foreach (var modelView in _dictionaryModelViewPairs.Values)
+            foreach (var modelView in _dictionaryIndexViewPairs.Values)
             {
                 modelView.Recycle();
             }
 
-            _dictionaryModelViewPairs.Clear();
+            _dictionaryIndexViewPairs.Clear();
 
             _view.Hide();
         }
