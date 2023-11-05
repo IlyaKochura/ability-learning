@@ -61,7 +61,6 @@
      <Compile Include="Assets\Code\Abilities\Models\AbilityModel.cs" />
      <Compile Include="Assets\Code\Finance\Installer\FinanceInstaller.cs" />
      <Compile Include="Assets\Code\Abilities\AbilityExtensions.cs" />
-     <Compile Include="Assets\Code\Finance\Models\FinanceStorage.cs" />
      <Compile Include="Assets\Code\Finance\Contracts\IPointsService.cs" />
      <Compile Include="Assets\Code\Abilities\Contracts\IAbilityViewFactory.cs" />
      <Compile Include="Assets\Code\Abilities\Views\AbilityNodeView.cs" />
@@ -83,7 +82,6 @@
      <Folder Include="Assets\Code\Ui" />
      <Folder Include="Assets\Code\Ui\Views" />
      <Folder Include="Assets\Code\Abilities\Installer" />
-     <Folder Include="Assets\Code\Finance\Models" />
      <Folder Include="Assets\Code\Configs" />
      <Folder Include="Assets\Code\Saves\Utils" />
      <Folder Include="Assets\Code\Abilities\Contracts" />

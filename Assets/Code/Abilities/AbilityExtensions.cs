@@ -18,7 +18,7 @@ namespace Code.Abilities
 
                 if (linkedNode == default)
                 {
-                    return null;
+                    continue;
                 }
 
                 if (linkedNode.IsOpen)

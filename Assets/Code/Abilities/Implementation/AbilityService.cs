@@ -194,13 +194,13 @@ namespace Code.Abilities.Implementation
             return false;
         }
 
-        public void Save()
+        private void Save()
         {
             _saveModel.SetModels(_abilityModels);
             _saveService.Save(_saveModel);
         }
         
-        public void Load()
+        private void Load()
         {
             var saveModel = _saveService.GetSave<AbilitySaveModel>();
 

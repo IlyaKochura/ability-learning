@@ -10,10 +10,9 @@ namespace Code.Finance.Implementation
         private readonly ISaveService _saveService;
         private readonly MainConfig _mainConfig;
 
-        public PointsService(ISaveService saveService, MainConfig mainConfig)
+        public PointsService(ISaveService saveService)
         {
             _saveService = saveService;
-            _mainConfig = mainConfig;
 
             _pointsSaveModel = new PointsSaveModel();
             

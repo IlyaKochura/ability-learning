@@ -16,12 +16,6 @@ namespace Code.Abilities.Models
         public bool IsOpen { get; private set; }
         public Vector2 Position { get; set; }
 
-        [JsonConstructor]
-        public AbilityModel()
-        {
-            
-        }
-        
         public AbilityModel(bool open = false)
         {
             IsOpen = open;
