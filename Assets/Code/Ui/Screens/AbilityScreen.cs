@@ -6,6 +6,7 @@ using Code.Configs;
 using Code.Finance.Contracts;
 using Code.Ui.Views;
 using ScreenManager.Runtime.Contracts;
+using UnityEngine;
 
 namespace Code.Ui.Screens
 {
@@ -63,7 +64,10 @@ namespace Code.Ui.Screens
         {
             _abilityService.SetCurrentAbilityModel(index);
 
-            _currentAbilityView.SetCurrent(false);
+            if (_currentAbilityView != null)
+            {
+                _currentAbilityView.SetCurrent(false);
+            }
 
             _currentAbilityView = GetAbilityNodeView(index);
 
@@ -75,6 +79,13 @@ namespace Code.Ui.Screens
         private AbilityNodeView GetAbilityNodeView(int index)
         {
             var abilityNodeView = _dictionaryIndexViewPairs.FirstOrDefault(nodeView => nodeView.Key == index).Value;
+
+            if (abilityNodeView == default)
+            {
+                Debug.LogError($"Not found Node with id: {index}");
+                
+                return null;
+            }
 
             return abilityNodeView;
         }
