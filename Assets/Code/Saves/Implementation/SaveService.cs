@@ -1,6 +1,6 @@
 using Code.Saves.Contracts;
 using ModestTree;
-using Newtonsoft.Json;
+using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
 
 namespace Code.Saves.Implementation
