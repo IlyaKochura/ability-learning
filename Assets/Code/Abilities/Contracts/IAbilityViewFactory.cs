@@ -6,6 +6,6 @@ namespace Code.Abilities.Contracts
 {
     public interface IAbilityViewFactory
     {
-        AbilityNodeView CreateAbilityNodeView(AbilityModel abilityModel, RectTransform parent);
+        AbilityNodeView CreateAbilityNodeView(AbilityModel abilityModel, RectTransform abilityParent, RectTransform lineParent);
     }
 }

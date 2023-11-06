@@ -6,24 +6,20 @@ using Code.Saves.Contracts;
 
 namespace Code.Finance.Implementation
 {
-    public class PointsService : IPointsService, ILoadSavesService
+    internal class PointsService : IPointsService, ILoadSavesService
     {
         private readonly ISaveService _saveService;
         private readonly MainConfig _mainConfig;
         private readonly PointsSaveModel _pointsSaveModel;
 
+        private int _points;
+        public event Action<int> OnPointsChanged;
         public PointsService(ISaveService saveService)
         {
             _saveService = saveService;
 
             _pointsSaveModel = new PointsSaveModel();
-            
-            Load();
         }
-
-        private int _points;
-
-        public Action<int> OnPointsChanged { get; set; }
 
         public void Add(int count)
         {
@@ -43,9 +39,9 @@ namespace Code.Finance.Implementation
             {
                 return;
             }
-            
+
             _points -= count;
-           Save();
+            Save();
             OnPointsChanged?.Invoke(_points);
         }
 
@@ -53,16 +49,14 @@ namespace Code.Finance.Implementation
         {
             var pointsSaveModel = _saveService.GetSave<PointsSaveModel>();
 
-            if (pointsSaveModel == null) 
+            if (pointsSaveModel != null)
             {
-                OnPointsChanged?.Invoke(_points);
-                return;
+                _points = pointsSaveModel.Points;
             }
-
-            _points = pointsSaveModel.Points;
+            
             OnPointsChanged?.Invoke(_points);
         }
-        
+
         private void Save()
         {
             _pointsSaveModel.SetPoints(_points);

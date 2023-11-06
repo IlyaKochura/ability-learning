@@ -16,8 +16,7 @@ namespace Code.Ui.Screens
         private readonly IAbilityViewFactory _abilityViewFactory;
         private readonly IAbilityService _abilityService;
         private readonly MainConfig _mainConfig;
-
-        private Dictionary<int, AbilityNodeView> _dictionaryIndexViewPairs = new();
+        private readonly Dictionary<int, AbilityNodeView> _dictionaryIndexViewPairs = new();
 
         private AbilityNodeView _currentAbilityView;
 
@@ -52,7 +51,7 @@ namespace Code.Ui.Screens
         {
             foreach (var model in _abilityService.AbilityModels)
             {
-                var view = _abilityViewFactory.CreateAbilityNodeView(model, _view.AbilityPlaceHolder);
+                var view = _abilityViewFactory.CreateAbilityNodeView(model, _view.AbilityPlaceHolder, _view.LinePlaceHolder);
 
                 view.SetAction(SetCurrentNode, model.Index);
 
@@ -107,24 +106,27 @@ namespace Code.Ui.Screens
 
         private void OpenAbility()
         {
-            if (_abilityService.CanOpenCurrentAbility())
+            if (!_abilityService.CanOpenCurrentAbility())
             {
-                _abilityService.OpenCurrentAbility();
-                _currentAbilityView.UpdateView(_abilityService.CurrentAbilityModel);
-                
-                UpdateInteractableButtons();
+                return;
             }
+            
+            _abilityService.OpenCurrentAbility();
+            _currentAbilityView.UpdateView(_abilityService.CurrentAbilityModel);
+                
+            UpdateInteractableButtons();
         }
         
         private void CloseAbility()
         {
-            if (_abilityService.CanCloseCurrentAbility())
+            if (!_abilityService.CanCloseCurrentAbility())
             {
-                _abilityService.CloseCurrentAbility();
-                _currentAbilityView.UpdateView(_abilityService.CurrentAbilityModel);
-                
-                UpdateInteractableButtons();
+                return;
             }
+            _abilityService.CloseCurrentAbility();
+            _currentAbilityView.UpdateView(_abilityService.CurrentAbilityModel);
+                
+            UpdateInteractableButtons();
         }
 
         private void UpdateAllViews()

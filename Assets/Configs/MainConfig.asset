@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _addPointsStep: 15
   _abilityNodeViewPrefab: {fileID: 277735112136860497, guid: 671f4e892a77afa4fbab4398573e1c1a, type: 3}
+  _linePrefab: {fileID: 2029598384804666668, guid: 66cb267ca3e81ed4cbde70686db0f5ca, type: 3}
   _abilityDefinitions:
   - {fileID: 11400000, guid: 0bfd1d008e8c73744b9b66a69f8dda93, type: 2}
   - {fileID: 11400000, guid: 5892f9633fc96fb45a2f7f605cdcdc11, type: 2}

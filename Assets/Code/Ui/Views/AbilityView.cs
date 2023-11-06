@@ -12,8 +12,10 @@ namespace Code.Ui.Views
         [SerializeField] private Button _openButton;
         [SerializeField] private Button _closeAllButton;
         [SerializeField] private RectTransform _abilityPlaceholder;
+        [SerializeField] private RectTransform _linePlaceholder;
 
         public RectTransform AbilityPlaceHolder => _abilityPlaceholder;
+        public RectTransform LinePlaceHolder => _linePlaceholder;
         
         public Action ExitClick { get; set; }
         public Action CloseClick { get; set; }

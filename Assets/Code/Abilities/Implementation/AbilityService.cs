@@ -10,7 +10,7 @@ using Code.Saves.Contracts;
 
 namespace Code.Abilities.Implementation
 {
-    public class AbilityService : IAbilityService, ILoadSavesService
+    internal class AbilityService : IAbilityService, ILoadSavesService
     {
         private HashSet<AbilityModel> _visitedModels = new();
 
@@ -41,8 +41,6 @@ namespace Code.Abilities.Implementation
             _baseAbility.SetOpen(true);
 
             _saveModel = new AbilitySaveModel();
-           
-            Load();
         }
 
         public void SetCurrentAbilityModel(int index)
@@ -67,7 +65,7 @@ namespace Code.Abilities.Implementation
             _pointsService.Add(_currentAbilityModel.Price);
 
             _currentAbilityModel.SetOpen(false);
-            
+
             Save();
         }
 
@@ -142,6 +140,8 @@ namespace Code.Abilities.Implementation
                     _pointsService.Add(abilityModel.Price);
                 }
             }
+            
+            Save();
         }
 
         public bool CanCloseCurrentAbility()
@@ -180,16 +180,13 @@ namespace Code.Abilities.Implementation
 
             _visitedModels.Add(needVisitAbility);
 
-            var linkedAbilities = needVisitAbility.GetOpenedLinkedModels(_abilityModels);
+            var openedLinkedModels = needVisitAbility.GetOpenedLinkedModels(_abilityModels);
 
-            foreach (var linkedModel in linkedAbilities)
+            foreach (var linkedModel in openedLinkedModels.Where(model => !_visitedModels.Contains(model)))
             {
-                if (!_visitedModels.Contains(linkedModel))
+                if (CheckModels(linkedModel, targetAbility, currentAbility))
                 {
-                    if (CheckModels(linkedModel, targetAbility, currentAbility))
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
 
@@ -201,7 +198,7 @@ namespace Code.Abilities.Implementation
             _saveModel.SetModels(_abilityModels);
             _saveService.Save(_saveModel);
         }
-        
+
         public void Load()
         {
             var saveModel = _saveService.GetSave<AbilitySaveModel>();
@@ -210,7 +207,7 @@ namespace Code.Abilities.Implementation
             {
                 return;
             }
-        
+
             foreach (var abilitySave in saveModel.AbilityModels)
             {
                 _abilityModels.First(model => model.Index == abilitySave.Key).SetOpen(abilitySave.Value);

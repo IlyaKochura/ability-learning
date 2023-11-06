@@ -67,7 +67,11 @@
      <Compile Include="Assets\Code\Saves\Contracts\ISaveModel.cs" />
      <Compile Include="Assets\Code\Saves\Utils\SaveUtils.cs" />
      <Compile Include="Assets\Code\Saves\Contracts\ILoadSavesService.cs" />
+     <Compile Include="Assets\Code\LineDrawer\Contracts\IAbilityLineDrawer.cs" />
+     <Compile Include="Assets\Code\LineDrawer\Implementation\AbilityLineDrawer.cs" />
+     <Compile Include="Assets\Code\EntryPoint.cs" />
      <Folder Include="Assets\Code\Saves\Implementation" />
+     <Folder Include="Assets\Code\LineDrawer\Implementation" />
      <Folder Include="Assets\Code\Abilities\Definition" />
      <Folder Include="Assets\Code\Saves\Installer" />
      <Folder Include="Assets\Code\Finance\Implementation" />
@@ -77,6 +81,7 @@
      <None Include="Assets\Code\Code.Core.asmdef" />
      <Folder Include="Assets\Code\Finance\Installer" />
      <Folder Include="Assets\Code\Finance" />
+     <Folder Include="Assets\Code\LineDrawer" />
      <Folder Include="Assets\Code\Finance\Contracts" />
      <Folder Include="Assets\Code\Abilities\Implementation" />
      <Folder Include="Assets\Code\Abilities\Models" />
@@ -88,6 +93,7 @@
      <Folder Include="Assets\Code\Abilities\Contracts" />
      <Folder Include="Assets\Code\Abilities\Views" />
      <Folder Include="Assets\Code\Abilities" />
+     <Folder Include="Assets\Code\LineDrawer\Contracts" />
      <Folder Include="Assets\Code" />
      <Folder Include="Assets\Code\Ui\InstallerUI" />
      <Folder Include="Assets\Code\Saves\Contracts" />
@@ -770,6 +776,9 @@
      </Reference>
      <Reference Include="Unity.TextMeshPro">
      <HintPath>E:\ProjectHome\ability-learning\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityUIExtensions">
+     <HintPath>E:\ProjectHome\ability-learning\Library\ScriptAssemblies\UnityUIExtensions.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>E:\ProjectHome\ability-learning\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Code.Saves.Implementation
 {
-    public class SaveService : ISaveService
+    internal class SaveService : ISaveService
     {
         public void Save<T>(T saveModel) where T : class, ISaveModel
         {
@@ -18,17 +18,12 @@ namespace Code.Saves.Implementation
         { 
             var saveString = PlayerPrefs.GetString(typeof(T).Name);
 
-            if (saveString.IsEmpty() || saveString == null)
+            if (string.IsNullOrEmpty(saveString))
             {
                 return null;
             }
 
             var savedModel = JsonConvert.DeserializeObject<T>(saveString);
-
-            if (savedModel == null)
-            {
-                return null;
-            }
 
             return savedModel; 
         }

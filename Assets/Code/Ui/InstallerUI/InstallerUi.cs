@@ -1,4 +1,3 @@
-using Code.Saves.Contracts;
 using Code.Ui.Screens;
 using Code.Ui.Views;
 using ScreenManager.Runtime.Contracts;
@@ -16,6 +15,7 @@ namespace Code.Ui.InstallerUI
         {
             InstallViews();
             InstallScreens();
+            ResolveScreenManager();
         }
 
         private void InstallScreens()
@@ -30,17 +30,10 @@ namespace Code.Ui.InstallerUI
             Container.Bind<AbilityView>().FromInstance(_abilityView).AsSingle();
         }
 
-        public override void Start()
-        {
-            ResolveAndScreenManager();
-        }
-
-        private void ResolveAndScreenManager()
+        private void ResolveScreenManager()
         {
             var screenManager = Container.Resolve<IScreenManager>();
             screenManager.Resolve(Container);
-            
-            screenManager.ShowScreen<MainScreen>();
         }
     }
 }

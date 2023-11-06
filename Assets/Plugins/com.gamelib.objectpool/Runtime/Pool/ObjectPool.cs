@@ -41,16 +41,14 @@ namespace ObjectPool.Pool.Runtime
                 }
                 return obj.GetComponent<T>();
             }
-            else
+
+            obj = Object.Instantiate(prefab, position, quaternion);
+            AddToPool<T>(obj);
+            if (parent != null)
             {
-                obj = Object.Instantiate(prefab, position, quaternion);
-                AddToPool<T>(obj);
-                if (parent != null)
-                {
-                    obj.transform.SetParent(parent);
-                }
-                return obj.GetComponent<T>();
+                obj.transform.SetParent(parent);
             }
+            return obj.GetComponent<T>();
         }
         
         public T Spawn<T>(GameObject prefab, Transform parent = null) where T : Component, IRecycle
@@ -65,16 +63,14 @@ namespace ObjectPool.Pool.Runtime
                 }
                 return obj.GetComponent<T>();
             }
-            else
+
+            obj = Object.Instantiate(prefab, parent);
+            AddToPool<T>(obj);
+            if (parent != null)
             {
-                obj = Object.Instantiate(prefab, parent);
-                AddToPool<T>(obj);
-                if (parent != null)
-                {
-                    obj.transform.SetParent(parent);
-                }
-                return obj.GetComponent<T>();
+                obj.transform.SetParent(parent);
             }
+            return obj.GetComponent<T>();
         }
 
         private GameObject GetInactiveObject<T>() where T : Component, IRecycle
