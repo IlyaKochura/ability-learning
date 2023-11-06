@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 10
   m_EditorClassIdentifier: 
   _index: 10
-  _price: 10
+  _price: 40
   _title: Ask for a raise
   _description: For 1 thousand rubles...
   _mainNodeColor: {r: 0.20392159, g: 0.87843144, b: 0.86666673, a: 1}

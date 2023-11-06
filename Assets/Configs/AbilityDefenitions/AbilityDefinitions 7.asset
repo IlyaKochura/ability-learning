@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 7
   m_EditorClassIdentifier: 
   _index: 7
-  _price: 7
+  _price: 30
   _title: Keep up on time
   _description: Wow, you made it to the deadline
   _mainNodeColor: {r: 0.26666668, g: 0.2784314, b: 0.6784314, a: 1}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 4
   m_EditorClassIdentifier: 
   _index: 4
-  _price: 4
+  _price: 20
   _title: Touch the grass
   _description: Did you make it to the end of the sprint?
   _mainNodeColor: {r: 0.9921569, g: 0.7725491, b: 0.098039225, a: 1}

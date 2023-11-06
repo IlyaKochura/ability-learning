@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 9
   m_EditorClassIdentifier: 
   _index: 9
-  _price: 9
+  _price: 40
   _title: Find a girl
   _description: Even the skill won't help you...
   _mainNodeColor: {r: 0.2027857, g: 0.8773585, b: 0.86526406, a: 1}

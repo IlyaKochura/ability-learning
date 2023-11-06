@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 6
   m_EditorClassIdentifier: 
   _index: 6
-  _price: 6
+  _price: 30
   _title: Interviewing skill
   _description: And even my knees don't shake
   _mainNodeColor: {r: 0.26666668, g: 0.2784314, b: 0.6784314, a: 1}

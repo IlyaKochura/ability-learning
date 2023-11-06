@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 3
   m_EditorClassIdentifier: 
   _index: 3
-  _price: 3
+  _price: 10
   _title: Get out of the house
   _description: It's a super power, no other way
   _mainNodeColor: {r: 0.9921569, g: 0.7725491, b: 0.098039225, a: 1}

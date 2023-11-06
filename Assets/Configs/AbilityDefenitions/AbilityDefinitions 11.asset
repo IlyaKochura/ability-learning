@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 11
   m_EditorClassIdentifier: 
   _index: 11
-  _price: 11
-  _title: Now you senior
-  _description: Now you can do nothing)
+  _price: 50
+  _title: Now you Team Lead
+  _description: Now you sit in meetings forever
   _mainNodeColor: {r: 1, g: 0.82917696, b: 0.0141509175, a: 1}
   _openColor: {r: 0.6, g: 1, b: 0.31764707, a: 1}
   _closedColor: {r: 0.16078432, g: 0.09411766, b: 0.09411766, a: 1}

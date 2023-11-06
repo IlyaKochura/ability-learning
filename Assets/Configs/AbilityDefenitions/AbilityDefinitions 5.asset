@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 5
   m_EditorClassIdentifier: 
   _index: 5
-  _price: 5
+  _price: 30
   _title: Not burnable
   _description: You've learned IT
   _mainNodeColor: {r: 0.26593092, g: 0.2797451, b: 0.6792453, a: 1}

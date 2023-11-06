@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 1
   m_EditorClassIdentifier: 
   _index: 1
-  _price: 1
+  _price: 10
   _title: Jump Skill
   _description: You can jumping anyone
   _mainNodeColor: {r: 0.99215686, g: 0.77144533, b: 0.09803923, a: 1}

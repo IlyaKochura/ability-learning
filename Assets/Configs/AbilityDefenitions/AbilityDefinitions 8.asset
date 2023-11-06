@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AbilityDefinitions 8
   m_EditorClassIdentifier: 
   _index: 8
-  _price: 8
+  _price: 40
   _title: Get cured of alcoholism
   _description: Did you quit your job?
   _mainNodeColor: {r: 0.26666668, g: 0.2784314, b: 0.6784314, a: 1}
