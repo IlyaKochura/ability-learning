@@ -27,7 +27,7 @@ namespace Code.Ui.Screens
             _abilityViewFactory = abilityViewFactory;
             _abilityService = abilityService;
 
-            pointsService.OnPointsChanger += _ => UpdateInteractableButtons();
+            pointsService.OnPointsChanged += _ => UpdateInteractableButtons();
             
             _view.ExitClick += screenManager.GoBack;
 

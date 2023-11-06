@@ -22,7 +22,7 @@ namespace Code.Ui.Screens
             _view.OpenAbilityClick += ShowAbilityWindow;
             _view.EarnPointsClick += EarnPoints;
 
-            _pointsService.OnPointsChanger += UpdatePoints;
+            _pointsService.OnPointsChanged += UpdatePoints;
         }
 
         private void ShowAbilityWindow()
@@ -32,8 +32,6 @@ namespace Code.Ui.Screens
 
         public void Show()
         {
-            _view.UpdatePoints($"Points {_pointsService.GetPoints()}");
-            
             _view.Show();
         }
 

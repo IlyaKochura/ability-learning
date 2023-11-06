@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Code.Abilities.Contracts;
+using Code.Abilities.Extensions;
 using Code.Abilities.Models;
 using Code.Abilities.Save;
 using Code.Configs;
@@ -9,7 +10,7 @@ using Code.Saves.Contracts;
 
 namespace Code.Abilities.Implementation
 {
-    public class AbilityService : IAbilityService
+    public class AbilityService : IAbilityService, ILoadSavesService
     {
         private HashSet<AbilityModel> _visitedModels = new();
 
@@ -66,6 +67,7 @@ namespace Code.Abilities.Implementation
             _pointsService.Add(_currentAbilityModel.Price);
 
             _currentAbilityModel.SetOpen(false);
+            
             Save();
         }
 
@@ -90,16 +92,16 @@ namespace Code.Abilities.Implementation
                 return false;
             }
 
-            var relationshipAbilities = _currentAbilityModel.GetOpenedLinkedModels(_abilityModels);
+            var linkedModels = _currentAbilityModel.GetOpenedLinkedModels(_abilityModels);
 
-            if (relationshipAbilities == null)
+            if (linkedModels == null)
             {
                 return false;
             }
 
             var canOpen = false;
 
-            foreach (var ability in relationshipAbilities)
+            foreach (var ability in linkedModels)
             {
                 if (!ability.IsOpen)
                 {
@@ -200,7 +202,7 @@ namespace Code.Abilities.Implementation
             _saveService.Save(_saveModel);
         }
         
-        private void Load()
+        public void Load()
         {
             var saveModel = _saveService.GetSave<AbilitySaveModel>();
 

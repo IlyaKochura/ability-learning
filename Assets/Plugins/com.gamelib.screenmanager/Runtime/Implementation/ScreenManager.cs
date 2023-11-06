@@ -17,6 +17,12 @@ namespace ScreenManager.Runtime.Implementation
 
             var screen = GetScreen(screenType);
 
+            if (screen == null)
+            {
+                Debug.LogError($"Not found screen: {screenType.Name}");
+                return;
+            }
+
             _showedScreenStack.TryPeek(out var lastShowedScreen);
 
             if (lastShowedScreen != null && lastShowedScreen.GetType() == screenType)
@@ -53,7 +59,7 @@ namespace ScreenManager.Runtime.Implementation
 
             if (screen == null)
             {
-                Debug.LogError($"Impossible close already closed Screen");
+                Debug.LogError($"All screens is closed");
                 return;
             }
             
@@ -77,7 +83,7 @@ namespace ScreenManager.Runtime.Implementation
                 
             Debug.LogError($"ScreenManager, not found screen with Type {screenType}");
 
-            return default;
+            return null;
         }
         
     }

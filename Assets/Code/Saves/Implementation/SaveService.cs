@@ -11,6 +11,7 @@ namespace Code.Saves.Implementation
         {
             var save = JsonConvert.SerializeObject(saveModel);
             PlayerPrefs.SetString(typeof(T).Name, save);
+            Debug.Log("Save");
         }
 
         public T GetSave<T>() where T : class , ISaveModel

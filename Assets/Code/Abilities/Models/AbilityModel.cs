@@ -1,4 +1,3 @@
-using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Code.Abilities.Models

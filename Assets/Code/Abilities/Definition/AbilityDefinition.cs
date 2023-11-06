@@ -2,7 +2,7 @@ using System;
 using Code.Abilities.Models;
 using UnityEngine;
 
-namespace Code.Abilities
+namespace Code.Abilities.Definition
 {
     [Serializable, CreateAssetMenu(menuName = "Configs/Ability/AbilityDefinition")]
     public class AbilityDefinition : ScriptableObject

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Abilities.Models;
 
-namespace Code.Abilities
+namespace Code.Abilities.Extensions
 {
     public static class AbilityExtensions
     {

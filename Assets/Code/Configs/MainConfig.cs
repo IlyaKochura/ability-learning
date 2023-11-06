@@ -1,5 +1,5 @@
 using System;
-using Code.Abilities;
+using Code.Abilities.Definition;
 using Code.Abilities.Views;
 using UnityEngine;
 using Zenject;

@@ -5,13 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject", "Zenject.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamelib.ScreenManager.Runtime", "Gamelib.ScreenManager.Runtime.csproj", "{29991f45-8465-5676-fd6a-ccb78b6a4f18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code.Core", "Code.Core.csproj", "{3ce1bde1-85d4-15e5-0953-5f7eaab32f8e}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-IntegrationTests", "Zenject-IntegrationTests.csproj", "{89455b8b-b234-61a7-e240-1e775061ab10}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-IntegrationTests-Editor", "Zenject-IntegrationTests-Editor.csproj", "{9f3627c2-1642-a393-eee0-c03d94ae0d3a}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{2591c80e-3cb0-6c86-7f81-a2e55705e337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code.Core", "Code.Core.csproj", "{3ce1bde1-85d4-15e5-0953-5f7eaab32f8e}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLib.ObjectPool.Runtime", "GameLib.ObjectPool.Runtime.csproj", "{5043f9d8-a4a7-27d6-e5fa-83df5c662b51}"
 EndProject
@@ -36,14 +36,14 @@ Global
 		{f57a5fb5-3747-e541-92d8-7fc3fe9d1109}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29991f45-8465-5676-fd6a-ccb78b6a4f18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{29991f45-8465-5676-fd6a-ccb78b6a4f18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3ce1bde1-85d4-15e5-0953-5f7eaab32f8e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3ce1bde1-85d4-15e5-0953-5f7eaab32f8e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89455b8b-b234-61a7-e240-1e775061ab10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{89455b8b-b234-61a7-e240-1e775061ab10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9f3627c2-1642-a393-eee0-c03d94ae0d3a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9f3627c2-1642-a393-eee0-c03d94ae0d3a}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2591c80e-3cb0-6c86-7f81-a2e55705e337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2591c80e-3cb0-6c86-7f81-a2e55705e337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ce1bde1-85d4-15e5-0953-5f7eaab32f8e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ce1bde1-85d4-15e5-0953-5f7eaab32f8e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5043f9d8-a4a7-27d6-e5fa-83df5c662b51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5043f9d8-a4a7-27d6-e5fa-83df5c662b51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{e5918106-a852-180d-51da-509668f8e1db}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
