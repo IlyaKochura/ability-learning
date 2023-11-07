@@ -157,7 +157,7 @@ namespace Code.Abilities.Implementation
             {
                 _visitedModels.Clear();
 
-                if (!CheckModels(_baseAbility, linkedOpenedModel, _currentAbilityModel))
+                if (!CheckPathForModel(_baseAbility, linkedOpenedModel, _currentAbilityModel))
                 {
                     return false;
                 }
@@ -166,7 +166,7 @@ namespace Code.Abilities.Implementation
             return true;
         }
 
-        private bool CheckModels(AbilityModel needVisitAbility, AbilityModel targetAbility, AbilityModel currentAbility)
+        private bool CheckPathForModel(AbilityModel needVisitAbility, AbilityModel targetAbility, AbilityModel currentAbility)
         {
             if (needVisitAbility == targetAbility)
             {
@@ -184,7 +184,7 @@ namespace Code.Abilities.Implementation
 
             foreach (var linkedModel in openedLinkedModels.Where(model => !_visitedModels.Contains(model)))
             {
-                if (CheckModels(linkedModel, targetAbility, currentAbility))
+                if (CheckPathForModel(linkedModel, targetAbility, currentAbility))
                 {
                     return true;
                 }

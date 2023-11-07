@@ -43,7 +43,9 @@
   <ItemGroup>
      <Compile Include="Assets\Code\Saves\Contracts\ISaveService.cs" />
      <Compile Include="Assets\Code\Ui\InstallerUI\InstallerUi.cs" />
+     <Compile Include="Assets\Code\LineDrawer\Contracts\IAbilityLineDrawer.cs" />
      <Compile Include="Assets\Code\Saves\Installer\SaveServiceInstaller.cs" />
+     <Compile Include="Assets\Code\Saves\Contracts\ILoadSavesService.cs" />
      <Compile Include="Assets\Code\Configs\MainConfig.cs" />
      <Compile Include="Assets\Code\Abilities\Contracts\IAbilityService.cs" />
      <Compile Include="Assets\Code\Abilities\Installer\AbilityInstaller.cs" />
@@ -60,15 +62,13 @@
      <Compile Include="Assets\Code\Abilities\Models\AbilityModel.cs" />
      <Compile Include="Assets\Code\Finance\Installer\FinanceInstaller.cs" />
      <Compile Include="Assets\Code\Abilities\Extensions\AbilityExtensions.cs" />
+     <Compile Include="Assets\Code\LineDrawer\Implementation\AbilityLineDrawer.cs" />
      <Compile Include="Assets\Code\Finance\Contracts\IPointsService.cs" />
      <Compile Include="Assets\Code\Abilities\Contracts\IAbilityViewFactory.cs" />
      <Compile Include="Assets\Code\Abilities\Views\AbilityNodeView.cs" />
      <Compile Include="Assets\Code\Abilities\Implementation\AbilityService.cs" />
      <Compile Include="Assets\Code\Saves\Contracts\ISaveModel.cs" />
      <Compile Include="Assets\Code\Saves\Utils\SaveUtils.cs" />
-     <Compile Include="Assets\Code\Saves\Contracts\ILoadSavesService.cs" />
-     <Compile Include="Assets\Code\LineDrawer\Contracts\IAbilityLineDrawer.cs" />
-     <Compile Include="Assets\Code\LineDrawer\Implementation\AbilityLineDrawer.cs" />
      <Compile Include="Assets\Code\EntryPoint.cs" />
      <Folder Include="Assets\Code\Saves\Implementation" />
      <Folder Include="Assets\Code\LineDrawer\Implementation" />

@@ -808,6 +808,9 @@
      <Reference Include="Unity.Rider.Editor">
      <HintPath>E:\ProjectHome\ability-learning\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="UnityUIExtensions">
+     <HintPath>E:\ProjectHome\ability-learning\Library\ScriptAssemblies\UnityUIExtensions.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>E:\ProjectHome\ability-learning\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
@@ -906,9 +909,6 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>E:\ProjectHome\ability-learning\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityUIExtensions">
-     <HintPath>E:\ProjectHome\ability-learning\Library\ScriptAssemblies\UnityUIExtensions.dll</HintPath>
      </Reference>
      <Reference Include="UnityUIExtensions.editor">
      <HintPath>E:\ProjectHome\ability-learning\Library\ScriptAssemblies\UnityUIExtensions.editor.dll</HintPath>

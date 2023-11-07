@@ -48,9 +48,9 @@
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\SignalSubscription.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\InstantiateCallbackConditionCopyNonLazyBinder.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Install\IInstaller.cs" />
-     <Compile Include="Assets\Plugins\Zenject\Source\Providers\IFactoryProvider.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Install\MonoInstaller.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Internal\MiscExtensions.cs" />
+     <Compile Include="Assets\Plugins\Zenject\Source\Providers\IFactoryProvider.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\MethodProviderUntyped.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\ComponentProviders\GetFromPrefabComponentProvider.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\SubContainerCreators\SubContainerCreatorDynamicContext.cs" />
@@ -348,8 +348,8 @@
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\DeclareSignal\DeclareSignalAsyncTickPriorityCopyBinder.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryArgumentsToChoiceBinder\FactoryArgumentsToChoiceBinder3.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Finalizers\PrefabBindingFinalizer.cs" />
-     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\Kernels\SceneKernel.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Util\ZenUtilInternal.cs" />
+     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\Kernels\SceneKernel.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryToChoiceIdBinder\FactoryToChoiceIdBinder1.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\BindSignal\BindSignalToBinder.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\BindSignal\SignalCallbackWrapper.cs" />
