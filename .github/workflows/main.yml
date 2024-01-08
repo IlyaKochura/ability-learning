@@ -1,6 +1,8 @@
 variables:
   UNITY_VERSION: 2021.3.16
 
+on: [push]
+
 build:android:
   script:
     - buildAndroid.sh $UNITY_VERSION
