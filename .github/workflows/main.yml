@@ -1,4 +1,4 @@
-- uses: game-ci/unity-test-runner@v4
+- uses: macos-runnerN1
   env:
     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   with:
