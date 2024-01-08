@@ -1,5 +1,1 @@
-  env:
-    UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-  with:
-    projectPath: E:\ProjectHome\ability-learning
-    githubToken: ${{ secrets.GITHUB_TOKEN }}
+runs-on: self-hosted
