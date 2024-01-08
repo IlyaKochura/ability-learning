@@ -1,6 +1,16 @@
-- uses: game-ci/unity-test-runner@v4
-  env:
-    UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-  with:
-    projectPath: E:\ProjectHome\ability-learning
-    githubToken: ${{ secrets.GITHUB_TOKEN }}
+variables:
+  UNITY_VERSION: 2021.3.16
+
+build:android:
+  script:
+    - buildAndroid.sh $UNITY_VERSION
+  only:
+    - releaseAndroid
+  when: manual
+
+build:ios:
+  script:
+    - buildIOS.sh $UNITY_VERSION
+  only:
+    - releaseIOS
+  when: manual
