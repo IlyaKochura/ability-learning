@@ -6,13 +6,3 @@ on: [push]
 build:android:
   script:
     - buildAndroid.sh $UNITY_VERSION
-  only:
-    - releaseAndroid
-  when: manual
-
-build:ios:
-  script:
-    - buildIOS.sh $UNITY_VERSION
-  only:
-    - releaseIOS
-  when: manual
