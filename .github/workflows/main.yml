@@ -1,1 +1,16 @@
-runs-on: self-hosted
+variables:
+  UNITY_VERSION: 2021.3.16
+
+build:android:
+  script:
+    - buildAndroid.sh $UNITY_VERSION
+  only:
+    - releaseAndroid
+  when: manual
+
+build:ios:
+  script:
+    - buildIOS.sh $UNITY_VERSION
+  only:
+    - releaseIOS
+  when: manual
