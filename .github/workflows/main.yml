@@ -1,4 +1,3 @@
-- uses: macos-runnerN1
   env:
     UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   with:
