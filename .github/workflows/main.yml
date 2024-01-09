@@ -1,8 +1,8 @@
   - name: Unity Build
   # You may pin to the exact commit or the version.
   # uses: akiojin/unity-build-github-action@72c1ea6effaf20002e8cb418a87207ab7ed18c1a
-  uses: akiojin/unity-build-github-action@v3.8.3
-  with:
+  - uses: akiojin/unity-build-github-action@v3.8.3
+    with:
     # Specify additional required arguments.
 
     additional-arguments: # optional, default is 
@@ -10,9 +10,9 @@
 
     app-id: com.aaaa.ccc
     # Allows the selection of an active build target before loading a project.
-Possible options are: Standalone, Win, Win64, OSXUniversal, Linux, Linux64, LinuxUniversal, iOS, Android, Web, WebStreamed, WebGL, XboxOne, PS4, WindowsStoreApps, Switch, N3DS, tvOS.
+    Possible options are: Standalone, Win, Win64, OSXUniversal, Linux, Linux64, LinuxUniversal, iOS, Android, Web, WebStreamed, WebGL, XboxOne, PS4, WindowsStoreApps, Switch, N3DS, tvOS.
 
-    build-target: 
+    build-target: Android
     # The configuration to use when building the app. Defaults to 'Debug'
-Possible options are: Debug, Release.
+    Possible options are: Debug, Release.
           
