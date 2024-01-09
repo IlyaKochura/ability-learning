@@ -70,6 +70,7 @@
      <Compile Include="Assets\Code\Saves\Contracts\ISaveModel.cs" />
      <Compile Include="Assets\Code\Saves\Utils\SaveUtils.cs" />
      <Compile Include="Assets\Code\EntryPoint.cs" />
+     <Compile Include="Assets\Code\Build\Builder.cs" />
      <Folder Include="Assets\Code\Saves\Implementation" />
      <Folder Include="Assets\Code\LineDrawer\Implementation" />
      <Folder Include="Assets\Code\Abilities\Definition" />
@@ -89,6 +90,7 @@
      <Folder Include="Assets\Code\Ui\Views" />
      <Folder Include="Assets\Code\Abilities\Installer" />
      <Folder Include="Assets\Code\Configs" />
+     <Folder Include="Assets\Code\Build" />
      <Folder Include="Assets\Code\Saves\Utils" />
      <Folder Include="Assets\Code\Abilities\Contracts" />
      <Folder Include="Assets\Code\Abilities\Views" />
