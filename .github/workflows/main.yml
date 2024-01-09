@@ -3,6 +3,13 @@ variables:
 
 on: [push]
 
-build:android:
+stages: 
+  - build
+
+build-android:
+  variables:
+    developmentBuild: 'true'
+    
+  stage: build
   script:
-    - buildAndroid.sh $UNITY_VERSION
+    
