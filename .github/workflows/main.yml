@@ -7,8 +7,13 @@ jobs:
     name: Build android
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
-        with: 
-          fetch-depth: 0
-          lfs: true
-    
+      - uses: game-ci/unity-builder@v4
+        with:
+          targetPlatform: Android
+      - uses: actions/cache@v3
+        with:
+          path: 
+          key: Library-MyProjectName-TargetPlatform
+          restore-keys: |
+            Library-MyProjectName-
+            Library-
