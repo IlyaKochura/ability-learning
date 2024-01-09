@@ -12,8 +12,4 @@ jobs:
           targetPlatform: Android
       - uses: actions/cache@v3
         with:
-          path: /Users/iliakochura/ability-lerning
-          key: Library-MyProjectName-TargetPlatform
-          restore-keys: |
-            Library-MyProjectName-
-            Library-
+          path: /Users/ilakocura/ability-learning
