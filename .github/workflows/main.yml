@@ -11,7 +11,7 @@ jobs:
 
             - name: Build the Unity project
               run: |
-                  /Applications/Unity/Hub/Editor/2021.3.16f1/Unity.app/Contents/MacOS/Unity -quit -batchmode -accept-apiupdate -buildTarget android -executeMethod Code.CustomBuilder.AndroidDevelopment -projectPath /Users/ilakocura/ability-learning
+                  /Applications/Unity/Hub/Editor/2021.3.16f1/Unity.app/Contents/MacOS/Unity -quit -batchmode -buildTarget android -executeMethod Code.CustomBuilder.AndroidDevelopment -projectPath /Users/ilakocura/ability-learning
 
             - name: Upload Build Artifacts
               uses: actions/upload-artifact@v2
