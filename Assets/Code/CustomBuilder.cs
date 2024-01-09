@@ -11,14 +11,13 @@ namespace Code
      SuppressMessage("ReSharper", "CheckNamespace")]
     public class CustomBuilder
     {
-        private static string outputProjectsFolder = Environment.GetEnvironmentVariable("OutputDirectory");
         static void AndroidDevelopment() {
             PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
             PlayerSettings.SetScriptingDefineSymbolsForGroup (BuildTargetGroup.Android, "DEV");
             EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
             EditorUserBuildSettings.development = true;
             EditorUserBuildSettings.androidETC2Fallback = AndroidETC2Fallback.Quality32Bit;
-            BuildReport report = BuildPipeline.BuildPlayer (GetScenes (), $"{outputProjectsFolder}/testBuild.apk", BuildTarget.Android, BuildOptions.None);
+            BuildReport report = BuildPipeline.BuildPlayer (GetScenes (), $"/Users/BuildCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
             int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;
             EditorApplication.Exit (code);   
         }
