@@ -1,12 +1,16 @@
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 
 namespace Code
 {
+    [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global"), 
+     SuppressMessage("ReSharper", "InconsistentNaming"), 
+     SuppressMessage("ReSharper", "CheckNamespace")]
     public class CustomBuilder
     {
-        static void AndroidDevelopment () {
+        static void AndroidDevelopment() {
             PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
             PlayerSettings.SetScriptingDefineSymbolsForGroup (BuildTargetGroup.Android, "DEV");
             EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
