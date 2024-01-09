@@ -9,12 +9,6 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v2
 
-            - name: Set up Unity
-              uses: game-ci/setup-unity@v1
-              with:
-                  unityVersion: 2021.3.16f1
-                  modules: "unity,webgl"
-
             - name: Build the Unity project
               run: |
                   /Applications/Unity/Hub/Editor/2021.3.16f1/Unity.app/Contents/MacOS/Unity -quit -batchmode -executeMethod BuildScript.PerformBuild
