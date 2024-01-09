@@ -8,8 +8,6 @@ namespace Code
 {
     public class EntryPoint : MonoBehaviour
     {
-        
-        
         private ILoadSavesService[] _loadSavesServices;
         private IScreenManager _screenManager;
 
