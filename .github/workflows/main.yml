@@ -10,3 +10,4 @@ jobs:
             - uses: game-ci/unity-builder@v4.1.3
               with:
                   targetPlatform: Android
+                  projectPath: /Users/ilakocura/ability-learning
