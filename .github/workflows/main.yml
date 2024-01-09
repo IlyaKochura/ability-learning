@@ -3,13 +3,9 @@ variables:
 
 on: [push]
 
-stages: 
-  - build
-
-build-android:
-  variables:
-    developmentBuild: 'true'
-    
-  stage: build
-  script:
+jobs:
+  build-android:
+    name: Build android
+    runs-on: self-hosted
+    stage: build
     
