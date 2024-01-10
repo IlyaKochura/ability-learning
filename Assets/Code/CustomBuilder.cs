@@ -21,8 +21,8 @@ namespace Code
             //BuildReport report = BuildPipeline.BuildPlayer (GetScenes (), "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
             //int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;       
 
-            var a = Random.Range(2, 4);
-            var b = Random.Range(2, 4);
+            var a = Random.Range(2, 5);
+            var b = Random.Range(2, 5);
 
             int exitCode = 0;
             
