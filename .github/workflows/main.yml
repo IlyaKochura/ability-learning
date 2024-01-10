@@ -1,20 +1,22 @@
 name: Unity Build
 
-on: [push]
+on: 
+  workflow_dispatch:
     
 jobs:
     build:
-        runs-on: self-hosted
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
+      if: github.event_name == 'workflow_dispatch'
+      runs-on: self-hosted
+      steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
 
-            - name: Build the Unity project
-              run: |
+          - name: Build the Unity project
+            run: |
                   /Applications/Unity/Hub/Editor/2021.3.16f1/Unity.app/Contents/MacOS/Unity -batchmode -buildTarget android -quit ‑ignorecompilererrors -executeMethod CustomBuilder.AndroidDevelopment -projectPath /Users/ilakocura/ability-learning -logFile /Users/ilakocura/BuildsCiLogs/BuildLog.log
 
-            - name: Upload Build Artifacts
-              uses: actions/upload-artifact@v2
-              with:
-                  name: Game-Build
-                  path: /Users/ilakocura/BuildsCi/testBuild.apk
+          - name: Upload Build Artifacts
+            uses: actions/upload-artifact@v2
+            with:
+                name: Game-Build
+                path: /Users/ilakocura/BuildsCi/testBuild.apk
