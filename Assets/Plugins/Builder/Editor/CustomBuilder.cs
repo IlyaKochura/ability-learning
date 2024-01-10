@@ -12,7 +12,6 @@ public class CustomBuilder
 {
     static void AndroidDevelopment() 
     {
-        
         PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
         EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
         EditorUserBuildSettings.development = true;
