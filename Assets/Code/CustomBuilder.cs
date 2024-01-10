@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Code
 {
@@ -19,7 +20,20 @@ namespace Code
             //EditorUserBuildSettings.development = true;
             //BuildReport report = BuildPipeline.BuildPlayer (GetScenes (), "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
             //int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;       
-            Debug.LogError(GetScenes());
+
+            var a = Random.Range(2, 4);
+            var b = Random.Range(2, 4);
+
+            int exitCode = 0;
+            
+            if (a == b)
+            {
+                exitCode = 1;
+            }
+            
+            EditorApplication.Exit(exitCode);
+            
+            Console.WriteLine(1);
             //EditorApplication.Exit(code);   
         }
         
