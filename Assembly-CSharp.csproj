@@ -943,6 +943,10 @@
       <Project>{5043f9d8-a4a7-27d6-e5fa-83df5c662b51}</Project>
       <Name>GameLib.ObjectPool.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="com.builder.editor.csproj">
+      <Project>{8da4c8f3-b5f9-fcb5-3b11-f5d832fe7844}</Project>
+      <Name>com.builder.editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

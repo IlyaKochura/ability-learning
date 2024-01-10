@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-TestFramework", "Ze
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-Editor", "Zenject-Editor.csproj", "{ad09505d-27b7-21ed-52ea-28e7747a1131}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.builder.editor", "com.builder.editor.csproj", "{8da4c8f3-b5f9-fcb5-3b11-f5d832fe7844}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{48d2b1b1-5674-8978-f96a-4ee80b22ff51}"
 EndProject
 Global
@@ -56,6 +58,8 @@ Global
 		{8dc2774f-2894-b037-5a00-a672edd95d4d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ad09505d-27b7-21ed-52ea-28e7747a1131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ad09505d-27b7-21ed-52ea-28e7747a1131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8da4c8f3-b5f9-fcb5-3b11-f5d832fe7844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8da4c8f3-b5f9-fcb5-3b11-f5d832fe7844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48d2b1b1-5674-8978-f96a-4ee80b22ff51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{48d2b1b1-5674-8978-f96a-4ee80b22ff51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection

@@ -41,7 +41,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Code\CustomBuilder.cs" />
      <Compile Include="Assets\Code\Saves\Contracts\ISaveService.cs" />
      <Compile Include="Assets\Code\Ui\InstallerUI\InstallerUi.cs" />
      <Compile Include="Assets\Code\LineDrawer\Contracts\IAbilityLineDrawer.cs" />
@@ -95,6 +94,7 @@
      <Folder Include="Assets\Code\Abilities\Views" />
      <Folder Include="Assets\Code\Abilities" />
      <Folder Include="Assets\Code\LineDrawer\Contracts" />
+     <Folder Include="Assets\Code" />
      <Folder Include="Assets\Code\Ui\InstallerUI" />
      <Folder Include="Assets\Code\Saves\Contracts" />
      <Folder Include="Assets\Code\Abilities\Extensions" />
