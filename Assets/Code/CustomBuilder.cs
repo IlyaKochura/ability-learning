@@ -16,22 +16,23 @@ namespace Code
         static void AndroidDevelopment() 
         {
             //PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
-            //EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
-            //EditorUserBuildSettings.development = true;
-            //BuildReport report = BuildPipeline.BuildPlayer (GetScenes (), "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
-            //int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;       
+            EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
+            EditorUserBuildSettings.development = true;
+            string[] g = new[] { "/Users/ilakocura/ability-lerning/Assets/Scenes/SampleScene.unity" };
+            BuildReport report = BuildPipeline.BuildPlayer (g, "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
+            int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;       
 
-            var a = Random.Range(2, 5);
-            var b = Random.Range(2, 5);
+            //var a = Random.Range(2, 5);
+            //var b = Random.Range(2, 5);
 
-            int exitCode = 0;
+            //int exitCode = 0;
             
-            if (a == b)
-            {
-                exitCode = 1;
-            }
+            //if (a == b)
+           // {
+           //     exitCode = 1;
+           //}
             
-            EditorApplication.Exit(exitCode);
+            EditorApplication.Exit(code);
             
             Console.WriteLine(1);
             //EditorApplication.Exit(code);   
