@@ -15,8 +15,8 @@ public class CustomBuilder
         PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
         EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
         EditorUserBuildSettings.development = true;
-        string[] g = new[] { "/Users/ilakocura/ability-lerning/Assets/Scenes/SampleScene.unity" };
-        BuildReport report = BuildPipeline.BuildPlayer (g, "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.Development);
+        //string[] g = new[] { "/Assets/Scenes/SampleScene.unity" };
+        BuildReport report = BuildPipeline.BuildPlayer (GetScenes(), "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.Development);
         int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;       
             
         EditorApplication.Exit(code);
