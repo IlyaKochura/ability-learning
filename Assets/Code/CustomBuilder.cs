@@ -11,11 +11,12 @@ namespace Code
      SuppressMessage("ReSharper", "CheckNamespace")]
     public class CustomBuilder
     {
-        static void AndroidDevelopment() {
+        static void AndroidDevelopment() 
+        {
             PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
             EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
-            EditorUserBuildSettings.development = true;
-            BuildReport report = BuildPipeline.BuildPlayer (GetScenes (), "/Users/BuildCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
+            //EditorUserBuildSettings.development = true;
+            BuildReport report = BuildPipeline.BuildPlayer (GetScenes (), "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
             int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;       
             EditorApplication.Exit(code);   
         }
