@@ -15,11 +15,11 @@ namespace Code
     {
         static void AndroidDevelopment() 
         {
-            //PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
+            PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
             EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
             EditorUserBuildSettings.development = true;
             string[] g = new[] { "/Users/ilakocura/ability-lerning/Assets/Scenes/SampleScene.unity" };
-            BuildReport report = BuildPipeline.BuildPlayer (g, "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
+            BuildReport report = BuildPipeline.BuildPlayer (g, "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.Development);
             int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;       
 
             //var a = Random.Range(2, 5);
