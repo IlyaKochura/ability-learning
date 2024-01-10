@@ -17,4 +17,4 @@ jobs:
               uses: actions/upload-artifact@v2
               with:
                   name: Game-Build
-                  path: /Users/BuildCi/testBuild.apk
+                  path: /Users/ilakocura/BuildCi/testBuild.apk
