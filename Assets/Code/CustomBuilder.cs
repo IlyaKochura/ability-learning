@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
+using UnityEngine;
 
 namespace Code
 {
@@ -13,12 +14,13 @@ namespace Code
     {
         static void AndroidDevelopment() 
         {
-            PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
-            EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
+            //PlayerSettings.SetScriptingBackend (BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
+            //EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTargetGroup.Android, BuildTarget.Android);
             //EditorUserBuildSettings.development = true;
-            BuildReport report = BuildPipeline.BuildPlayer (GetScenes (), "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
-            int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;       
-            EditorApplication.Exit(code);   
+            //BuildReport report = BuildPipeline.BuildPlayer (GetScenes (), "/Users/ilakocura/BuildsCi/testBuild.apk", BuildTarget.Android, BuildOptions.None);
+            //int code = (report.summary.result == BuildResult.Succeeded) ? 0 : 1;       
+            Debug.LogError(GetScenes());
+            //EditorApplication.Exit(code);   
         }
         
         static string[] GetScenes()
