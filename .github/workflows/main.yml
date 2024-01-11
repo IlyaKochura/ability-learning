@@ -6,6 +6,10 @@ on:
       - main
       - feature/**
   workflow_dispatch: 
+    inputs:
+      logLevel:
+        description: 'Build'
+        required: true
     
 jobs:
     build:
