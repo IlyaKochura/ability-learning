@@ -11,13 +11,13 @@ on:
 jobs:
     build:
       runs-on: self-hosted
-      steps:
-        - name: Pull latest changes
-          run: git pull        
-        
+      steps:      
         - name: Checkout code
           uses: actions/checkout@v2
 
+        - name: Pull latest changes
+          run: git pull
+        
         - name: Build the Unity project
           run: |
                 /Applications/Unity/Hub/Editor/2021.3.16f1/Unity.app/Contents/MacOS/Unity -batchmode -buildTarget android -quit ‑ignorecompilererrors -executeMethod CustomBuilder.AndroidDevelopment -projectPath /Users/ilakocura/ability-learning -logFile /Users/ilakocura/BuildsCiLogs/BuildLog.log
