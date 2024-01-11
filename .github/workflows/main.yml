@@ -7,13 +7,9 @@ on:
       - feature/**
   workflow_dispatch: 
     inputs:
-      logLevel:
-        description: 'Build'
-        required: true
-    
+        
 jobs:
     build:
-      if: github.event_name == 'workflow_dispatch'
       runs-on: self-hosted
       steps:
         - name: Pull latest changes
