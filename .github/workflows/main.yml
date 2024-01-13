@@ -17,9 +17,10 @@ jobs:
               
         - name: Pull latest changes
           run: |
-            cd /Users/ilakocura/ability-learning
-            git checkout $GITHUB_REF
-            git pull
+            echo "Current branch is $GITHUB_REF"
+ #           cd /Users/ilakocura/ability-learning
+  #          git checkout $GITHUB_REF
+   #         git pull
 
         - name: Build the Unity project
           run: |
