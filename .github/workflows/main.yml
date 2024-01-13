@@ -16,9 +16,13 @@ jobs:
             ref: ${{ github.event.inputs.branch }}
               
         - name: Pull latest changes
-          run: |
-              cd $GITHUB_WORKSPACE
-              git pull
+          run:
+            |
+            cd /Users/ilakocura/ability-learning
+            |
+            git checkout $GITHUB_REF
+            |
+            git pull
 
         - name: Build the Unity project
           run: |
