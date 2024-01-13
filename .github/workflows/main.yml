@@ -12,6 +12,11 @@ jobs:
       steps:      
         - name: Checkout code
           uses: actions/checkout@v2
+          with:
+            ref: ${{ github.event.inputs.branch }}
+              
+        - name: Pull latest changes
+          run: git pull
 
         - name: Build the Unity project
           run: |
