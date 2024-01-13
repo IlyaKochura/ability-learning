@@ -17,8 +17,9 @@ jobs:
               
         - name: Pull latest changes
           run: |
-              cd $GITHUB_WORKSPACE
-              git pull
+            cd /Users/ilakocura/ability-learning
+            git checkout $GITHUB_REF
+            git pull
 
         - name: Build the Unity project
           run: |
